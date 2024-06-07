@@ -426,6 +426,17 @@
 ]]
 
 function CreateGUI()
+	local Dead =false
+	local Human;
+
+	repeat
+		pcall(function()
+			Human = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+		end)
+	until Human~= nil
+	Human.Died:Connect(function()
+		Dead = true
+	end)
 	local MANTASPACK = Instance.new("ScreenGui")
 	MANTASPACK.ResetOnSpawn =true
 local MainGUI = Instance.new("Frame")
@@ -1538,10 +1549,6 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 		UInp = game:GetService("UserInputService");
 		Tween = game:GetService("TweenService");
 		}
-		local Dead =false
-		SERVICES.Player.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Died:Connect(function()
-			Dead = true
-		end)
 	_G.Draggable = true
 	local PACKHOLDER = script.Parent
 	local MAIN = PACKHOLDER.MainGUI
