@@ -425,8 +425,9 @@
 
 ]]
 
-
-local MANTASPACK = Instance.new("ScreenGui")
+function CreateGUI()
+	local MANTASPACK = Instance.new("ScreenGui")
+	MANTASPACK.ResetOnSpawn =true
 local MainGUI = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
@@ -1466,7 +1467,10 @@ UIStroke_57.Parent = PLAYERBTN
 UIStroke_57.Color = Color3.fromRGB(255, 123, 123)
 
 UICorner_21.Parent = PLAYERBTN
-
+	local Dead =false
+	--[[game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Died:Connect(function()
+		Dead = true
+	end)]]
 -- Scripts:
 
 local function AZILZ_script() -- MainGUI.Dragify 
@@ -1890,7 +1894,8 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 	
 	end)]]
 	task.spawn(function()
-		while task.wait() do
+			while task.wait() do
+				if Dead then break end
 			pcall(function()
 				while CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT == true do
 					local CHAR = SERVICES.Player.LocalPlayer.Character
@@ -1968,7 +1973,7 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 	SERVICES.Player.ChildRemoved:Connect(ScanMyNiggers)
 	SERVICES.UInp.InputBegan:Connect(InpBegan)
 	SERVICES.Run.Heartbeat:Connect(function()
-	
+		if Dead then return end
 		for i,v in pairs(SERVICES.Work:GetDescendants()) do
 			if v:IsA("Sound") and (v~= CONFIG.SOUNDSTUFF.SOUNDREPLACER) then
 				v.SoundGroup = CONFIG.SOUNDSTUFF.SOUNDMUTER
@@ -2048,3 +2053,13 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 	end)
 end
 coroutine.wrap(NOLQENI_script)()
+end
+
+CreateGUI()
+game:GetService("RunService").Stepped:Connect(function()
+	if game:GetService("Players").LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):FindFirstChild("MANTA'S PACK.") then
+		
+	else
+		CreateGUI()
+	end
+end)
