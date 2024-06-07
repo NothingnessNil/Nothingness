@@ -1467,10 +1467,6 @@ UIStroke_57.Parent = PLAYERBTN
 UIStroke_57.Color = Color3.fromRGB(255, 123, 123)
 
 UICorner_21.Parent = PLAYERBTN
-	local Dead =false
-	--[[game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Died:Connect(function()
-		Dead = true
-	end)]]
 -- Scripts:
 
 local function AZILZ_script() -- MainGUI.Dragify 
@@ -1541,7 +1537,11 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 		Deb = game:GetService("Debris");
 		UInp = game:GetService("UserInputService");
 		Tween = game:GetService("TweenService");
-	}
+		}
+		local Dead =false
+		SERVICES.Player.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Died:Connect(function()
+			Dead = true
+		end)
 	_G.Draggable = true
 	local PACKHOLDER = script.Parent
 	local MAIN = PACKHOLDER.MainGUI
@@ -1923,7 +1923,10 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 						else
 							GOKUPART.Anchored = true
 							GOKUPART.CanCollide = false
-							GOKUPART.Transparency = .5
+								GOKUPART.Transparency = .5
+								GOKUPART.Shape = Enum.PartType.Ball
+								GOKUPART.Material = Enum.Material.ForceField
+								GOKUPART.Color = Color3.new(0.133333, 0.623529, 1)
 							GOKUPART.Parent = workspace
 							SERVICES.Deb:AddItem(GOKUPART,.1)
 	
@@ -2001,10 +2004,10 @@ local function NOLQENI_script() -- MANTASPACK.Handler
 					Force.ForceLimitMode = Enum.ForceLimitMode.Magnitude
 					table.insert(CONFIG.BUOY.Forces,{v,Force,Gyro,Attachment})
 	
-					local HL = Instance.new("Highlight",v)
+					--[[local HL = Instance.new("Highlight",v)
 					HL.Adornee = v
 					HL.OutlineTransparency = 0
-					HL.FillTransparency = .5
+					HL.FillTransparency = .5]]
 				end
 			end
 		end
