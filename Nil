@@ -1,7 +1,8 @@
 --You ask yourself' why here?
+local RealDead = false
 function CreateGUI()
-	local Dead =false
 	local Human;
+	local Dead = false
 	repeat
 		wait()
 		pcall(function()
@@ -9,6 +10,8 @@ function CreateGUI()
 		end)
 	until Human~= nil
 	Human.Died:Connect(function()
+		--Human.Parent:Destroy()
+		RealDead = true
 		Dead = true
 	end)
 	local MANTASPACK = Instance.new("ScreenGui")
@@ -1571,10 +1574,15 @@ function CreateGUI()
 	coroutine.wrap(NOLQENI_script)()
 end
 CreateGUI()
-game:GetService("RunService").Stepped:Connect(function()
+--[[game:GetService("RunService").Stepped:Connect(function()
 	if game:GetService("Players").LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):FindFirstChild("MANTA'S PACK.") then
 
 	else
-		CreateGUI()
+		if RealDead == true then
+			if game:GetService("Players").LocalPlayer.Character ~= nil then
+				RealDead = true
+				CreateGUI()
+			end
+		end
 	end
-end)
+end)]]
