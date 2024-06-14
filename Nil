@@ -1353,7 +1353,7 @@ if _G.ActuallyFireTheGui == true then
 			end
 		end)
 		GuiNChildren["FormationChooseButton"].Activated:Connect(function()
-			if CONFIG.BUOY.FORMATION+1 > 5 then
+			if CONFIG.BUOY.FORMATION+1 > 6 then
 				CONFIG.BUOY.FORMATION = 1
 			else
 				CONFIG.BUOY.FORMATION +=1
