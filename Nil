@@ -1620,7 +1620,7 @@ local function HODHZ_script() -- MANTASPACK.Handler
 					v[3].CFrame = CFrame.new()*CFrame.fromEulerAngles(math.rad(math.random(1,360)),math.rad(math.random(1,360)),math.rad(math.random(1,360)))
 				elseif CONFIG.BUOY.FORMATION == 3 then
 					local Funny = Vector3.new(math.random(-(_G.MalevolentShrineRadius),(_G.MalevolentShrineRadius)),math.random(-(_G.MalevolentShrineRadius),(_G.MalevolentShrineRadius)),math.random(-(_G.MalevolentShrineRadius),(_G.MalevolentShrineRadius)))
-					v[2].Position = Funny
+					v[2].Position += Funny
 					v[3].CFrame = CFrame.new()*CFrame.fromEulerAngles(math.rad(math.random(1,360)),math.rad(math.random(1,360)),math.rad(math.random(1,360)))
 				end
 			else
