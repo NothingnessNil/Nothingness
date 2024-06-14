@@ -1,1588 +1,530 @@
---You ask yourself' why here?
-local RealDead = false
-function CreateGUI()
-	local Human;
-	local Dead = false
-	repeat
-		wait()
-		pcall(function()
-			Human = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-		end)
-	until Human~= nil
-	Human.Died:Connect(function()
-		--Human.Parent:Destroy()
-		RealDead = true
-		Dead = true
-	end)
-	local MANTASPACK = Instance.new("ScreenGui")
-	MANTASPACK.ResetOnSpawn =true
-	local MainGUI = Instance.new("Frame")
-	local UICorner = Instance.new("UICorner")
-	local UIStroke = Instance.new("UIStroke")
-	local BG = Instance.new("ImageLabel")
-	local UICorner_2 = Instance.new("UICorner")
-	local PAGES = Instance.new("Frame")
-	local _1PG1MainandWealth = Instance.new("Frame")
-	local UICorner_3 = Instance.new("UICorner")
-	local YOURSELF = Instance.new("ImageLabel")
-	local UICorner_4 = Instance.new("UICorner")
-	local YOURNAME = Instance.new("TextLabel")
-	local UICorner_5 = Instance.new("UICorner")
-	local UIStroke_2 = Instance.new("UIStroke")
-	local UIStroke_3 = Instance.new("UIStroke")
-	local QUOTEOFTHEDAY = Instance.new("TextLabel")
-	local UICorner_6 = Instance.new("UICorner")
-	local UIStroke_4 = Instance.new("UIStroke")
-	local UIStroke_5 = Instance.new("UIStroke")
-	local _2PG2BuoysandTomfoolery = Instance.new("Frame")
-	local UICorner_7 = Instance.new("UICorner")
-	local TITLE = Instance.new("TextLabel")
-	local UICorner_8 = Instance.new("UICorner")
-	local UIStroke_6 = Instance.new("UIStroke")
-	local UIStroke_7 = Instance.new("UIStroke")
-	local WaterBuoyInitiator = Instance.new("TextButton")
-	local UIStroke_8 = Instance.new("UIStroke")
-	local UIStroke_9 = Instance.new("UIStroke")
-	local PlayerOverlay = Instance.new("Frame")
-	local PlayerScrolling = Instance.new("ScrollingFrame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local NonPlayerOverlay = Instance.new("Frame")
-	local ImageLabel = Instance.new("ImageLabel")
-	local FormationChooseButton = Instance.new("TextButton")
-	local UIStroke_10 = Instance.new("UIStroke")
-	local UIStroke_11 = Instance.new("UIStroke")
-	local TargetChooseButton = Instance.new("TextButton")
-	local UIStroke_12 = Instance.new("UIStroke")
-	local UIStroke_13 = Instance.new("UIStroke")
-	local SpeedTextBox = Instance.new("TextBox")
-	local UIStroke_14 = Instance.new("UIStroke")
-	local UIStroke_15 = Instance.new("UIStroke")
-	local GyroSmoothnessTextBox = Instance.new("TextBox")
-	local UIStroke_16 = Instance.new("UIStroke")
-	local UIStroke_17 = Instance.new("UIStroke")
-	local GyroSpeedTextBox = Instance.new("TextBox")
-	local UIStroke_18 = Instance.new("UIStroke")
-	local UIStroke_19 = Instance.new("UIStroke")
-	local ENFORCEDFLINGING = Instance.new("TextButton")
-	local UIStroke_20 = Instance.new("UIStroke")
-	local UIStroke_21 = Instance.new("UIStroke")
-	local _5PG5CreditsandWater = Instance.new("Frame")
-	local TITLE_2 = Instance.new("TextLabel")
-	local UICorner_9 = Instance.new("UICorner")
-	local UIStroke_22 = Instance.new("UIStroke")
-	local UIStroke_23 = Instance.new("UIStroke")
-	local UICorner_10 = Instance.new("UICorner")
-	local CREDITS = Instance.new("TextLabel")
-	local UICorner_11 = Instance.new("UICorner")
-	local UIStroke_24 = Instance.new("UIStroke")
-	local UIStroke_25 = Instance.new("UIStroke")
-	local REMINDER = Instance.new("TextLabel")
-	local UICorner_12 = Instance.new("UICorner")
-	local UIStroke_26 = Instance.new("UIStroke")
-	local UIStroke_27 = Instance.new("UIStroke")
-	local _3PG3ScriptsandMisc = Instance.new("Frame")
-	local UICorner_13 = Instance.new("UICorner")
-	local TITLE_3 = Instance.new("TextLabel")
-	local UICorner_14 = Instance.new("UICorner")
-	local UIStroke_28 = Instance.new("UIStroke")
-	local UIStroke_29 = Instance.new("UIStroke")
-	local ScriptHubBTN = Instance.new("TextButton")
-	local UIStroke_30 = Instance.new("UIStroke")
-	local IYBtn = Instance.new("TextButton")
-	local UIStroke_31 = Instance.new("UIStroke")
-	local AudioSilenceBTN = Instance.new("TextButton")
-	local UIStroke_32 = Instance.new("UIStroke")
-	local AudioInputID = Instance.new("TextBox")
-	local UIStroke_33 = Instance.new("UIStroke")
-	local UIStroke_34 = Instance.new("UIStroke")
-	local AudioInputVolume = Instance.new("TextBox")
-	local UIStroke_35 = Instance.new("UIStroke")
-	local UIStroke_36 = Instance.new("UIStroke")
-	local _4PG4DefensesandTeleports = Instance.new("Frame")
-	local UICorner_15 = Instance.new("UICorner")
-	local TITLE_4 = Instance.new("TextLabel")
-	local UICorner_16 = Instance.new("UICorner")
-	local UIStroke_37 = Instance.new("UIStroke")
-	local UIStroke_38 = Instance.new("UIStroke")
-	local AOEProtectionBTN = Instance.new("TextButton")
-	local UIStroke_39 = Instance.new("UIStroke")
-	local AreaSizeINP = Instance.new("TextBox")
-	local UIStroke_40 = Instance.new("UIStroke")
-	local UIStroke_41 = Instance.new("UIStroke")
-	local WaitTimeINP = Instance.new("TextBox")
-	local UIStroke_42 = Instance.new("UIStroke")
-	local UIStroke_43 = Instance.new("UIStroke")
-	local GarageYeetBTN = Instance.new("TextButton")
-	local UIStroke_44 = Instance.new("UIStroke")
-	local GarageNoINP = Instance.new("TextBox")
-	local UIStroke_45 = Instance.new("UIStroke")
-	local UIStroke_46 = Instance.new("UIStroke")
-	local GOKUSFX = Instance.new("TextButton")
-	local UIStroke_47 = Instance.new("UIStroke")
-	local TITLE_5 = Instance.new("TextLabel")
-	local UICorner_17 = Instance.new("UICorner")
-	local UIStroke_48 = Instance.new("UIStroke")
-	local UIStroke_49 = Instance.new("UIStroke")
-	local UIStroke_50 = Instance.new("UIStroke")
-	local UIStroke_51 = Instance.new("UIStroke")
-	local UICorner_18 = Instance.new("UICorner")
-	local PageScrolling = Instance.new("ScrollingFrame")
-	local UIGridLayout = Instance.new("UIGridLayout")
-	local UIStroke_52 = Instance.new("UIStroke")
-	local OpenCloseButton = Instance.new("TextButton")
-	local UICorner_19 = Instance.new("UICorner")
-	local UIStroke_53 = Instance.new("UIStroke")
-	local PAGEBTN = Instance.new("TextButton")
-	local UIStroke_54 = Instance.new("UIStroke")
-	local UIStroke_55 = Instance.new("UIStroke")
-	local UICorner_20 = Instance.new("UICorner")
-	local PLAYERBTN = Instance.new("TextButton")
-	local UIStroke_56 = Instance.new("UIStroke")
-	local UIStroke_57 = Instance.new("UIStroke")
-	local UICorner_21 = Instance.new("UICorner")
 
-	--Properties:
 
-	MANTASPACK.Name = "MANTA'S PACK."
-	MANTASPACK.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	MANTASPACK.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	MainGUI.Name = "MainGUI"
-	MainGUI.Parent = MANTASPACK
-	MainGUI.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
-	MainGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	MainGUI.BorderSizePixel = 0
-	MainGUI.Position = UDim2.new(0.177973539, 0, 0.217063963, 0)
-	MainGUI.Size = UDim2.new(0.707000017, 0, 0.439999998, 0)
 
-	UICorner.Parent = MainGUI
-
-	UIStroke.Parent = MainGUI
-	UIStroke.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke.Thickness = 3.000
-	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	BG.Name = "BG"
-	BG.Parent = MainGUI
-	BG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	BG.BackgroundTransparency = 1.000
-	BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	BG.BorderSizePixel = 0
-	BG.Size = UDim2.new(1, 0, 1, 0)
-	BG.ZIndex = 0
-	BG.Image = "rbxassetid://398330154"
-	BG.ImageColor3 = Color3.fromRGB(0, 0, 0)
-	BG.ScaleType = Enum.ScaleType.Tile
-	BG.TileSize = UDim2.new(0, 50, 0, 50)
-
-	UICorner_2.Parent = BG
-
-	PAGES.Name = "PAGES"
-	PAGES.Parent = MainGUI
-	PAGES.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	PAGES.BackgroundTransparency = 1.000
-	PAGES.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PAGES.BorderSizePixel = 0
-	PAGES.Position = UDim2.new(0, 0, 0.176638156, 0)
-	PAGES.Size = UDim2.new(1, 0, 0.823361814, 0)
-
-	_1PG1MainandWealth.Name = "1PG1 : Main and Wealth"
-	_1PG1MainandWealth.Parent = PAGES
-	_1PG1MainandWealth.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	_1PG1MainandWealth.BackgroundTransparency = 0.750
-	_1PG1MainandWealth.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	_1PG1MainandWealth.BorderSizePixel = 0
-	_1PG1MainandWealth.Size = UDim2.new(1, 0, 1, 0)
-
-	UICorner_3.Parent = _1PG1MainandWealth
-
-	YOURSELF.Name = "YOURSELF."
-	YOURSELF.Parent = _1PG1MainandWealth
-	YOURSELF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	YOURSELF.BackgroundTransparency = 0.750
-	YOURSELF.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	YOURSELF.BorderSizePixel = 0
-	YOURSELF.Position = UDim2.new(-3.80518408e-08, 0, 0, 0)
-	YOURSELF.Size = UDim2.new(0.276808023, 0, 0.789251745, 0)
-	YOURSELF.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-	UICorner_4.Parent = YOURSELF
-
-	YOURNAME.Name = "YOURNAME"
-	YOURNAME.Parent = _1PG1MainandWealth
-	YOURNAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	YOURNAME.BackgroundTransparency = 0.750
-	YOURNAME.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	YOURNAME.BorderSizePixel = 0
-	YOURNAME.Position = UDim2.new(3.80518408e-08, 0, 0.795441568, 0)
-	YOURNAME.Size = UDim2.new(0.99999994, 0, 0.204558343, 0)
-	YOURNAME.Font = Enum.Font.Bodoni
-	YOURNAME.Text = "HELLO:"
-	YOURNAME.TextColor3 = Color3.fromRGB(0, 0, 0)
-	YOURNAME.TextScaled = true
-	YOURNAME.TextSize = 14.000
-	YOURNAME.TextWrapped = true
-	YOURNAME.TextXAlignment = Enum.TextXAlignment.Left
-
-	UICorner_5.Parent = YOURNAME
-
-	UIStroke_2.Parent = YOURNAME
-	UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_2.Thickness = 3.000
-	UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_3.Parent = YOURNAME
-	UIStroke_3.Color = Color3.fromRGB(255, 181, 181)
-
-	QUOTEOFTHEDAY.Name = "QUOTEOFTHEDAY"
-	QUOTEOFTHEDAY.Parent = _1PG1MainandWealth
-	QUOTEOFTHEDAY.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	QUOTEOFTHEDAY.BackgroundTransparency = 0.750
-	QUOTEOFTHEDAY.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	QUOTEOFTHEDAY.BorderSizePixel = 0
-	QUOTEOFTHEDAY.Position = UDim2.new(0.276807964, 0, 5.27985726e-08, 0)
-	QUOTEOFTHEDAY.Size = UDim2.new(0.721945167, 0, 0.795441568, 0)
-	QUOTEOFTHEDAY.Font = Enum.Font.Bodoni
-	QUOTEOFTHEDAY.Text = "QUOTE OF THE DAY:"
-	QUOTEOFTHEDAY.TextColor3 = Color3.fromRGB(0, 0, 0)
-	QUOTEOFTHEDAY.TextSize = 38.000
-	QUOTEOFTHEDAY.TextWrapped = true
-	QUOTEOFTHEDAY.TextXAlignment = Enum.TextXAlignment.Left
-	QUOTEOFTHEDAY.TextYAlignment = Enum.TextYAlignment.Top
-
-	UICorner_6.Parent = QUOTEOFTHEDAY
-
-	UIStroke_4.Parent = QUOTEOFTHEDAY
-	UIStroke_4.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_5.Parent = QUOTEOFTHEDAY
-	UIStroke_5.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_5.Transparency = 0.500
-	UIStroke_5.Thickness = 2.000
-	UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	_2PG2BuoysandTomfoolery.Name = "2PG2 : Buoys and Tomfoolery"
-	_2PG2BuoysandTomfoolery.Parent = PAGES
-	_2PG2BuoysandTomfoolery.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	_2PG2BuoysandTomfoolery.BackgroundTransparency = 0.750
-	_2PG2BuoysandTomfoolery.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	_2PG2BuoysandTomfoolery.BorderSizePixel = 0
-	_2PG2BuoysandTomfoolery.Size = UDim2.new(1, 0, 1, 0)
-	_2PG2BuoysandTomfoolery.Visible = false
-
-	UICorner_7.Parent = _2PG2BuoysandTomfoolery
-
-	TITLE.Name = "TITLE"
-	TITLE.Parent = _2PG2BuoysandTomfoolery
-	TITLE.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE.BackgroundTransparency = 0.750
-	TITLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE.BorderSizePixel = 0
-	TITLE.Position = UDim2.new(3.80518408e-08, 0, -0.000406073814, 0)
-	TITLE.Size = UDim2.new(0.99999994, 0, 0.10767255, 0)
-	TITLE.Font = Enum.Font.Bodoni
-	TITLE.Text = "WATER BUOY HELL."
-	TITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE.TextScaled = true
-	TITLE.TextSize = 14.000
-	TITLE.TextWrapped = true
-
-	UICorner_8.Parent = TITLE
-
-	UIStroke_6.Parent = TITLE
-	UIStroke_6.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_6.Thickness = 3.000
-	UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_7.Parent = TITLE
-	UIStroke_7.Color = Color3.fromRGB(255, 181, 181)
-
-	WaterBuoyInitiator.Name = "WaterBuoyInitiator"
-	WaterBuoyInitiator.Parent = _2PG2BuoysandTomfoolery
-	WaterBuoyInitiator.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	WaterBuoyInitiator.BackgroundTransparency = 0.350
-	WaterBuoyInitiator.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	WaterBuoyInitiator.BorderSizePixel = 0
-	WaterBuoyInitiator.Position = UDim2.new(3.80518408e-08, 0, 0.750865042, 0)
-	WaterBuoyInitiator.Size = UDim2.new(0.311720669, 0, 0.249134928, 0)
-	WaterBuoyInitiator.Font = Enum.Font.SourceSans
-	WaterBuoyInitiator.Text = "<div><font color=\"#bf74fd\">B</font><font color=\"#a680fb\">U</font><font color=\"#8c8cf9\">O</font><font color=\"#8bc3f9\">Y</font><font color=\"#89f9f9\"> </font><font color=\"#84f8bc\">I</font><font color=\"#7ef67e\">N</font><font color=\"#baf679\">I</font><font color=\"#f6f674\">T</font><font color=\"#f4d77a\">I</font><font color=\"#f2b87f\">A</font><font color=\"#f79d81\">T</font><font color=\"#fb8282\">E</font></div>"
-	WaterBuoyInitiator.RichText = true
-	WaterBuoyInitiator.TextColor3 = Color3.fromRGB(0, 0, 0)
-	WaterBuoyInitiator.TextScaled = true
-	WaterBuoyInitiator.TextSize = 14.000
-	WaterBuoyInitiator.TextWrapped = true
-
-	UIStroke_8.Parent = WaterBuoyInitiator
-	UIStroke_8.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_8.Thickness = 3.000
-	UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_9.Parent = WaterBuoyInitiator
-	UIStroke_9.Color = Color3.fromRGB(255, 181, 181)
-
-	PlayerOverlay.Name = "PlayerOverlay"
-	PlayerOverlay.Parent = _2PG2BuoysandTomfoolery
-	PlayerOverlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	PlayerOverlay.BackgroundTransparency = 1.000
-	PlayerOverlay.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PlayerOverlay.BorderSizePixel = 0
-	PlayerOverlay.Size = UDim2.new(1, 0, 1, 0)
-
-	PlayerScrolling.Name = "PlayerScrolling"
-	PlayerScrolling.Parent = PlayerOverlay
-	PlayerScrolling.Active = true
-	PlayerScrolling.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	PlayerScrolling.BackgroundTransparency = 0.650
-	PlayerScrolling.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PlayerScrolling.BorderSizePixel = 0
-	PlayerScrolling.Position = UDim2.new(0.31172055, 0, 0.107266478, 0)
-	PlayerScrolling.Size = UDim2.new(0.376558542, 0, 0.892733455, 0)
-	PlayerScrolling.ScrollBarImageColor3 = Color3.fromRGB(255, 0, 0)
-	PlayerScrolling.BottomImage = "rbxassetid://6939148322"
-	PlayerScrolling.MidImage = "rbxassetid://6939148322"
-	PlayerScrolling.TopImage = "rbxassetid://6939148322"
-
-	UIListLayout.Parent = PlayerScrolling
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-	NonPlayerOverlay.Name = "NonPlayerOverlay"
-	NonPlayerOverlay.Parent = _2PG2BuoysandTomfoolery
-	NonPlayerOverlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	NonPlayerOverlay.BackgroundTransparency = 1.000
-	NonPlayerOverlay.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	NonPlayerOverlay.BorderSizePixel = 0
-	NonPlayerOverlay.Size = UDim2.new(1, 0, 1, 0)
-	NonPlayerOverlay.Visible = false
-
-	ImageLabel.Parent = NonPlayerOverlay
-	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ImageLabel.BackgroundTransparency = 1.000
-	ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ImageLabel.BorderSizePixel = 0
-	ImageLabel.Position = UDim2.new(0.311720759, 0, 0.110368878, 0)
-	ImageLabel.Size = UDim2.new(0.376558661, 0, 0.889631093, 0)
-	ImageLabel.Image = "rbxassetid://10325742138"
-	ImageLabel.ScaleType = Enum.ScaleType.Fit
-
-	FormationChooseButton.Name = "FormationChooseButton"
-	FormationChooseButton.Parent = _2PG2BuoysandTomfoolery
-	FormationChooseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	FormationChooseButton.BackgroundTransparency = 0.350
-	FormationChooseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	FormationChooseButton.BorderSizePixel = 0
-	FormationChooseButton.Position = UDim2.new(1.89591027e-08, 0, 0.110368878, 0)
-	FormationChooseButton.Size = UDim2.new(0.311720669, 0, 0.339477539, 0)
-	FormationChooseButton.Font = Enum.Font.SourceSans
-	FormationChooseButton.Text = "<div><font color=\"#09a9e7\">F</font><font color=\"#11a0e0\">o</font><font color=\"#1998d9\">r</font><font color=\"#228fd3\">m</font><font color=\"#2a87cc\">a</font><font color=\"#327ec5\">t</font><font color=\"#3a74bc\">i</font><font color=\"#436ab4\">o</font><font color=\"#4b61ab\">n</font><font color=\"#5457a3\"> </font><font color=\"#5c4d9a\">o</font><font color=\"#664b9a\">f</font><font color=\"#70499a\"> </font><font color=\"#79479a\">t</font><font color=\"#83459a\">h</font><font color=\"#8d439a\">e</font><font color=\"#9247a4\"> </font><font color=\"#974bad\">W</font><font color=\"#9b4fb7\">a</font><font color=\"#a053c0\">t</font><font color=\"#a557ca\">e</font><font color=\"#924ccf\">r</font><font color=\"#7f41d4\"> </font><font color=\"#6c37d9\">B</font><font color=\"#592cde\">u</font><font color=\"#4621e3\">o</font><font color=\"#4c31da\">y</font></div><div><font color=\"#5342d1\">N</font><font color=\"#5952c8\">o</font><font color=\"#6063bf\">w</font><font color=\"#6673b6\">/</font><font color=\"#6185bf\">/</font><font color=\"#5c97c7\"> </font><font color=\"#57a9d0\">N</font><font color=\"#52bbd8\">/</font><font color=\"#4dcde1\">A</font></div>"
-	FormationChooseButton.RichText = true
-	FormationChooseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-	FormationChooseButton.TextScaled = true
-	FormationChooseButton.TextSize = 14.000
-	FormationChooseButton.TextWrapped = true
-
-	UIStroke_10.Parent = FormationChooseButton
-	UIStroke_10.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_10.Thickness = 3.000
-	UIStroke_10.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_11.Parent = FormationChooseButton
-	UIStroke_11.Color = Color3.fromRGB(255, 181, 181)
-
-	TargetChooseButton.Name = "TargetChooseButton"
-	TargetChooseButton.Parent = _2PG2BuoysandTomfoolery
-	TargetChooseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TargetChooseButton.BackgroundTransparency = 0.350
-	TargetChooseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TargetChooseButton.BorderSizePixel = 0
-	TargetChooseButton.Position = UDim2.new(0.688279271, 0, 0.750865042, 0)
-	TargetChooseButton.Size = UDim2.new(0.311720669, 0, 0.249134928, 0)
-	TargetChooseButton.ZIndex = 2
-	TargetChooseButton.Font = Enum.Font.SourceSans
-	TargetChooseButton.Text = "Click Move"
-	TargetChooseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TargetChooseButton.TextScaled = true
-	TargetChooseButton.TextSize = 14.000
-	TargetChooseButton.TextWrapped = true
-
-	UIStroke_12.Parent = TargetChooseButton
-	UIStroke_12.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_12.Thickness = 3.000
-	UIStroke_12.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_13.Parent = TargetChooseButton
-	UIStroke_13.Color = Color3.fromRGB(255, 181, 181)
-
-	SpeedTextBox.Name = "SpeedTextBox"
-	SpeedTextBox.Parent = _2PG2BuoysandTomfoolery
-	SpeedTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	SpeedTextBox.BackgroundTransparency = 0.350
-	SpeedTextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	SpeedTextBox.BorderSizePixel = 0
-	SpeedTextBox.Position = UDim2.new(0.687163949, 0, 0.107760735, 0)
-	SpeedTextBox.Size = UDim2.new(0.312836349, 0, 0.314438641, 0)
-	SpeedTextBox.Font = Enum.Font.SourceSans
-	SpeedTextBox.PlaceholderColor3 = Color3.fromRGB(106, 0, 2)
-	SpeedTextBox.PlaceholderText = "Speed/Smoothness"
-	SpeedTextBox.ShowNativeInput = false
-	SpeedTextBox.Text = ""
-	SpeedTextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-	SpeedTextBox.TextScaled = true
-	SpeedTextBox.TextSize = 14.000
-	SpeedTextBox.TextWrapped = true
-
-	UIStroke_14.Parent = SpeedTextBox
-	UIStroke_14.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_15.Parent = SpeedTextBox
-	UIStroke_15.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_15.Thickness = 3.000
-	UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	GyroSmoothnessTextBox.Name = "GyroSmoothnessTextBox"
-	GyroSmoothnessTextBox.Parent = _2PG2BuoysandTomfoolery
-	GyroSmoothnessTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	GyroSmoothnessTextBox.BackgroundTransparency = 0.350
-	GyroSmoothnessTextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GyroSmoothnessTextBox.BorderSizePixel = 0
-	GyroSmoothnessTextBox.Position = UDim2.new(-7.21204269e-05, 0, 0.449846417, 0)
-	GyroSmoothnessTextBox.Size = UDim2.new(0.311725348, 0, 0.138457805, 0)
-	GyroSmoothnessTextBox.Font = Enum.Font.SourceSans
-	GyroSmoothnessTextBox.PlaceholderColor3 = Color3.fromRGB(4, 106, 103)
-	GyroSmoothnessTextBox.PlaceholderText = "GyroSmoothness"
-	GyroSmoothnessTextBox.ShowNativeInput = false
-	GyroSmoothnessTextBox.Text = ""
-	GyroSmoothnessTextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-	GyroSmoothnessTextBox.TextScaled = true
-	GyroSmoothnessTextBox.TextSize = 14.000
-	GyroSmoothnessTextBox.TextWrapped = true
-
-	UIStroke_16.Parent = GyroSmoothnessTextBox
-	UIStroke_16.Color = Color3.fromRGB(0, 242, 255)
-
-	UIStroke_17.Parent = GyroSmoothnessTextBox
-	UIStroke_17.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_17.Thickness = 3.000
-	UIStroke_17.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	GyroSpeedTextBox.Name = "GyroSpeedTextBox"
-	GyroSpeedTextBox.Parent = _2PG2BuoysandTomfoolery
-	GyroSpeedTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	GyroSpeedTextBox.BackgroundTransparency = 0.350
-	GyroSpeedTextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GyroSpeedTextBox.BorderSizePixel = 0
-	GyroSpeedTextBox.Position = UDim2.new(-7.21204269e-05, 0, 0.612272382, 0)
-	GyroSpeedTextBox.Size = UDim2.new(0.311725348, 0, 0.138457805, 0)
-	GyroSpeedTextBox.Font = Enum.Font.SourceSans
-	GyroSpeedTextBox.PlaceholderColor3 = Color3.fromRGB(4, 106, 103)
-	GyroSpeedTextBox.PlaceholderText = "Gyro Speed"
-	GyroSpeedTextBox.ShowNativeInput = false
-	GyroSpeedTextBox.Text = ""
-	GyroSpeedTextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-	GyroSpeedTextBox.TextScaled = true
-	GyroSpeedTextBox.TextSize = 14.000
-	GyroSpeedTextBox.TextWrapped = true
-
-	UIStroke_18.Parent = GyroSpeedTextBox
-	UIStroke_18.Color = Color3.fromRGB(0, 242, 255)
-
-	UIStroke_19.Parent = GyroSpeedTextBox
-	UIStroke_19.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_19.Thickness = 3.000
-	UIStroke_19.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	ENFORCEDFLINGING.Name = "ENFORCED FLINGING"
-	ENFORCEDFLINGING.Parent = _2PG2BuoysandTomfoolery
-	ENFORCEDFLINGING.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	ENFORCEDFLINGING.BackgroundTransparency = 0.350
-	ENFORCEDFLINGING.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ENFORCEDFLINGING.BorderSizePixel = 0
-	ENFORCEDFLINGING.Position = UDim2.new(0.687361956, 0, 0.421681076, 0)
-	ENFORCEDFLINGING.Size = UDim2.new(0.311720669, 0, 0.32904917, 0)
-	ENFORCEDFLINGING.Font = Enum.Font.SourceSans
-	ENFORCEDFLINGING.Text = "<div><font color=\"#bf74fd\">U</font><font color=\"#ae7cfc\">n</font><font color=\"#9d84fa\">e</font><font color=\"#8c8cf9\">n</font><font color=\"#8bc3f9\">f</font><font color=\"#89f9f9\">o</font><font color=\"#85f8d0\">r</font><font color=\"#82f7a7\">c</font><font color=\"#7ef67e\">e</font><font color=\"#baf679\">d</font><font color=\"#f6f674\"> </font><font color=\"#f5e178\">B</font><font color=\"#f3cd7b\">u</font><font color=\"#f2b87f\">o</font><font color=\"#f79d81\">y</font><font color=\"#fb8282\">s</font></div>"
-	ENFORCEDFLINGING.RichText = true
-	ENFORCEDFLINGING.TextColor3 = Color3.fromRGB(0, 0, 0)
-	ENFORCEDFLINGING.TextScaled = true
-	ENFORCEDFLINGING.TextSize = 14.000
-	ENFORCEDFLINGING.TextWrapped = true
-
-	UIStroke_20.Parent = ENFORCEDFLINGING
-	UIStroke_20.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_20.Thickness = 3.000
-	UIStroke_20.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_21.Parent = ENFORCEDFLINGING
-	UIStroke_21.Color = Color3.fromRGB(255, 181, 181)
-
-	_5PG5CreditsandWater.Name = "5PG5 : Credits and Water"
-	_5PG5CreditsandWater.Parent = PAGES
-	_5PG5CreditsandWater.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	_5PG5CreditsandWater.BackgroundTransparency = 0.750
-	_5PG5CreditsandWater.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	_5PG5CreditsandWater.BorderSizePixel = 0
-	_5PG5CreditsandWater.Size = UDim2.new(1, 0, 1, 0)
-	_5PG5CreditsandWater.Visible = false
-
-	TITLE_2.Name = "TITLE"
-	TITLE_2.Parent = _5PG5CreditsandWater
-	TITLE_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_2.BackgroundTransparency = 0.750
-	TITLE_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_2.BorderSizePixel = 0
-	TITLE_2.Position = UDim2.new(3.80518408e-08, 0, -0.000406073814, 0)
-	TITLE_2.Size = UDim2.new(0.99999994, 0, 0.10767255, 0)
-	TITLE_2.Font = Enum.Font.Bodoni
-	TITLE_2.Text = "CREDITS AND EXTRA BUOY SCRIPT$"
-	TITLE_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_2.TextScaled = true
-	TITLE_2.TextSize = 14.000
-	TITLE_2.TextWrapped = true
-
-	UICorner_9.Parent = TITLE_2
-
-	UIStroke_22.Parent = TITLE_2
-	UIStroke_22.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_22.Thickness = 3.000
-	UIStroke_22.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_23.Parent = TITLE_2
-	UIStroke_23.Color = Color3.fromRGB(255, 181, 181)
-
-	UICorner_10.Parent = _5PG5CreditsandWater
-
-	CREDITS.Name = "CREDITS"
-	CREDITS.Parent = _5PG5CreditsandWater
-	CREDITS.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	CREDITS.BackgroundTransparency = 0.750
-	CREDITS.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	CREDITS.BorderSizePixel = 0
-	CREDITS.Position = UDim2.new(3.80518408e-08, 0, 0.107266478, 0)
-	CREDITS.Size = UDim2.new(0.390274286, 0, 0.892733455, 0)
-	CREDITS.Font = Enum.Font.Bodoni
-	CREDITS.Text = "Created by the Kings Division Members, IdkTree, and RGM King. Created once to annihalate BND, Created again to burn the remains.  "
-	CREDITS.TextColor3 = Color3.fromRGB(85, 0, 1)
-	CREDITS.TextScaled = true
-	CREDITS.TextSize = 38.000
-	CREDITS.TextWrapped = true
-	CREDITS.TextXAlignment = Enum.TextXAlignment.Left
-	CREDITS.TextYAlignment = Enum.TextYAlignment.Top
-
-	UICorner_11.Parent = CREDITS
-
-	UIStroke_24.Parent = CREDITS
-	UIStroke_24.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_25.Parent = CREDITS
-	UIStroke_25.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_25.Transparency = 0.500
-	UIStroke_25.Thickness = 2.000
-	UIStroke_25.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	REMINDER.Name = "REMINDER"
-	REMINDER.Parent = _5PG5CreditsandWater
-	REMINDER.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	REMINDER.BackgroundTransparency = 0.750
-	REMINDER.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	REMINDER.BorderSizePixel = 0
-	REMINDER.Position = UDim2.new(0.390274316, 0, 0.106860355, 0)
-	REMINDER.Size = UDim2.new(0.609725654, 0, 0.893139601, 0)
-	REMINDER.Font = Enum.Font.Bodoni
-	REMINDER.Text = "Oh yeah, just one more thing, We will always come back, there is no way to kill us that matters."
-	REMINDER.TextColor3 = Color3.fromRGB(0, 0, 0)
-	REMINDER.TextScaled = true
-	REMINDER.TextSize = 14.000
-	REMINDER.TextWrapped = true
-
-	UICorner_12.Parent = REMINDER
-
-	UIStroke_26.Parent = REMINDER
-	UIStroke_26.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_26.Thickness = 3.000
-	UIStroke_26.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_27.Parent = REMINDER
-	UIStroke_27.Color = Color3.fromRGB(255, 181, 181)
-
-	_3PG3ScriptsandMisc.Name = "3PG3 : Scripts and Misc"
-	_3PG3ScriptsandMisc.Parent = PAGES
-	_3PG3ScriptsandMisc.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	_3PG3ScriptsandMisc.BackgroundTransparency = 0.750
-	_3PG3ScriptsandMisc.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	_3PG3ScriptsandMisc.BorderSizePixel = 0
-	_3PG3ScriptsandMisc.Size = UDim2.new(1, 0, 1, 0)
-	_3PG3ScriptsandMisc.Visible = false
-
-	UICorner_13.Parent = _3PG3ScriptsandMisc
-
-	TITLE_3.Name = "TITLE"
-	TITLE_3.Parent = _3PG3ScriptsandMisc
-	TITLE_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_3.BackgroundTransparency = 0.750
-	TITLE_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_3.BorderSizePixel = 0
-	TITLE_3.Position = UDim2.new(3.80518408e-08, 0, -0.000406073814, 0)
-	TITLE_3.Size = UDim2.new(0.99999994, 0, 0.10767255, 0)
-	TITLE_3.Font = Enum.Font.Bodoni
-	TITLE_3.Text = "Scripts & Audio Manip"
-	TITLE_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_3.TextScaled = true
-	TITLE_3.TextSize = 14.000
-	TITLE_3.TextWrapped = true
-
-	UICorner_14.Parent = TITLE_3
-
-	UIStroke_28.Parent = TITLE_3
-	UIStroke_28.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_28.Thickness = 3.000
-	UIStroke_28.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_29.Parent = TITLE_3
-	UIStroke_29.Color = Color3.fromRGB(255, 181, 181)
-
-	ScriptHubBTN.Name = "ScriptHubBTN"
-	ScriptHubBTN.Parent = _3PG3ScriptsandMisc
-	ScriptHubBTN.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	ScriptHubBTN.BackgroundTransparency = 0.350
-	ScriptHubBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ScriptHubBTN.BorderSizePixel = 0
-	ScriptHubBTN.Position = UDim2.new(3.80518408e-08, 0, 0.570934236, 0)
-	ScriptHubBTN.Size = UDim2.new(0.42892766, 0, 0.221453264, 0)
-	ScriptHubBTN.Font = Enum.Font.SourceSans
-	ScriptHubBTN.Text = "<div><font color=\"#09a9e7\">S</font><font color=\"#327ec5\">c</font><font color=\"#4766b0\">r</font><font color=\"#5c4d9a\">i</font><font color=\"#8d439a\">p</font><font color=\"#a557ca\">t</font><font color=\"#763cd7\"> </font><font color=\"#4621e3\">H</font><font color=\"#6673b6\">u</font><font color=\"#4dcde1\">b</font></div>"
-	ScriptHubBTN.RichText = true
-	ScriptHubBTN.TextColor3 = Color3.fromRGB(103, 0, 10)
-	ScriptHubBTN.TextScaled = true
-	ScriptHubBTN.TextSize = 14.000
-	ScriptHubBTN.TextWrapped = true
-
-	UIStroke_30.Parent = ScriptHubBTN
-	UIStroke_30.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_30.Thickness = 3.000
-	UIStroke_30.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	IYBtn.Name = "IYBtn"
-	IYBtn.Parent = _3PG3ScriptsandMisc
-	IYBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	IYBtn.BackgroundTransparency = 0.350
-	IYBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	IYBtn.BorderSizePixel = 0
-	IYBtn.Position = UDim2.new(3.80518408e-08, 0, 0.249134973, 0)
-	IYBtn.Size = UDim2.new(0.42892766, 0, 0.221453264, 0)
-	IYBtn.Font = Enum.Font.SourceSans
-	IYBtn.Text = "<div><font color=\"#09a9e7\">I</font><font color=\"#1e94d6\">n</font><font color=\"#327ec5\">f</font><font color=\"#4766b0\">i</font><font color=\"#5c4d9a\">n</font><font color=\"#75489a\">i</font><font color=\"#8d439a\">t</font><font color=\"#a557ca\">e</font><font color=\"#763cd7\"> </font><font color=\"#4621e3\">Y</font><font color=\"#564acd\">i</font><font color=\"#6673b6\">e</font><font color=\"#5aa0cc\">l</font><font color=\"#4dcde1\">d</font></div>"
-	IYBtn.RichText = true
-	IYBtn.TextColor3 = Color3.fromRGB(103, 0, 10)
-	IYBtn.TextScaled = true
-	IYBtn.TextSize = 14.000
-	IYBtn.TextWrapped = true
-
-	UIStroke_31.Parent = IYBtn
-	UIStroke_31.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_31.Thickness = 3.000
-	UIStroke_31.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	AudioSilenceBTN.Name = "AudioSilenceBTN"
-	AudioSilenceBTN.Parent = _3PG3ScriptsandMisc
-	AudioSilenceBTN.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	AudioSilenceBTN.BackgroundTransparency = 0.350
-	AudioSilenceBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AudioSilenceBTN.BorderSizePixel = 0
-	AudioSilenceBTN.Position = UDim2.new(0.66832912, 0, 0.688581288, 0)
-	AudioSilenceBTN.Size = UDim2.new(0.331670791, 0, 0.311418653, 0)
-	AudioSilenceBTN.Font = Enum.Font.SourceSans
-	AudioSilenceBTN.Text = "<div><font color=\"#09a9e7\">M</font><font color=\"#139edf\">a</font><font color=\"#1e94d6\">k</font><font color=\"#2889ce\">e</font><font color=\"#327ec5\"> </font><font color=\"#406eb7\">a</font><font color=\"#4e5da8\">u</font><font color=\"#5c4d9a\">d</font><font color=\"#684b9a\">i</font><font color=\"#75489a\">o</font><font color=\"#81469a\"> </font><font color=\"#8d439a\">s</font><font color=\"#9348a6\">h</font><font color=\"#994db2\">u</font><font color=\"#9f52be\">t</font><font color=\"#a557ca\"> </font><font color=\"#8d4ad0\">t</font><font color=\"#763cd7\">h</font><font color=\"#5e2fdd\">e</font><font color=\"#4621e3\"> </font><font color=\"#513cd4\">f</font><font color=\"#5b58c5\">u</font><font color=\"#6673b6\">c</font><font color=\"#608ac1\">k</font><font color=\"#5aa0cc\"> </font><font color=\"#53b7d6\">u</font><font color=\"#4dcde1\">p</font></div><div></div>"
-	AudioSilenceBTN.RichText = true
-	AudioSilenceBTN.TextColor3 = Color3.fromRGB(103, 0, 10)
-	AudioSilenceBTN.TextScaled = true
-	AudioSilenceBTN.TextSize = 14.000
-	AudioSilenceBTN.TextWrapped = true
-
-	UIStroke_32.Parent = AudioSilenceBTN
-	UIStroke_32.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_32.Thickness = 3.000
-	UIStroke_32.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	AudioInputID.Name = "AudioInputID"
-	AudioInputID.Parent = _3PG3ScriptsandMisc
-	AudioInputID.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	AudioInputID.BackgroundTransparency = 0.350
-	AudioInputID.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AudioInputID.BorderSizePixel = 0
-	AudioInputID.Position = UDim2.new(0.66832912, 0, 0.36678201, 0)
-	AudioInputID.Size = UDim2.new(0.33167088, 0, 0.30436334, 0)
-	AudioInputID.Font = Enum.Font.SourceSans
-	AudioInputID.PlaceholderColor3 = Color3.fromRGB(106, 0, 2)
-	AudioInputID.PlaceholderText = "AudioID"
-	AudioInputID.ShowNativeInput = false
-	AudioInputID.Text = ""
-	AudioInputID.TextColor3 = Color3.fromRGB(0, 0, 0)
-	AudioInputID.TextScaled = true
-	AudioInputID.TextSize = 14.000
-	AudioInputID.TextWrapped = true
-
-	UIStroke_33.Parent = AudioInputID
-	UIStroke_33.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_34.Parent = AudioInputID
-	UIStroke_34.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_34.Thickness = 3.000
-	UIStroke_34.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	AudioInputVolume.Name = "AudioInputVolume"
-	AudioInputVolume.Parent = _3PG3ScriptsandMisc
-	AudioInputVolume.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	AudioInputVolume.BackgroundTransparency = 0.350
-	AudioInputVolume.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AudioInputVolume.BorderSizePixel = 0
-	AudioInputVolume.Position = UDim2.new(0.66832912, 0, 0.107266478, 0)
-	AudioInputVolume.Size = UDim2.new(0.33167088, 0, 0.259515584, 0)
-	AudioInputVolume.Font = Enum.Font.SourceSans
-	AudioInputVolume.PlaceholderColor3 = Color3.fromRGB(106, 55, 13)
-	AudioInputVolume.PlaceholderText = "Volume"
-	AudioInputVolume.ShowNativeInput = false
-	AudioInputVolume.Text = ""
-	AudioInputVolume.TextColor3 = Color3.fromRGB(0, 0, 0)
-	AudioInputVolume.TextScaled = true
-	AudioInputVolume.TextSize = 14.000
-	AudioInputVolume.TextWrapped = true
-
-	UIStroke_35.Parent = AudioInputVolume
-	UIStroke_35.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_36.Parent = AudioInputVolume
-	UIStroke_36.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_36.Thickness = 3.000
-	UIStroke_36.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	_4PG4DefensesandTeleports.Name = "4PG4 : Defenses and Teleports"
-	_4PG4DefensesandTeleports.Parent = PAGES
-	_4PG4DefensesandTeleports.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	_4PG4DefensesandTeleports.BackgroundTransparency = 0.750
-	_4PG4DefensesandTeleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	_4PG4DefensesandTeleports.BorderSizePixel = 0
-	_4PG4DefensesandTeleports.Size = UDim2.new(1, 0, 1, 0)
-	_4PG4DefensesandTeleports.Visible = false
-
-	UICorner_15.Parent = _4PG4DefensesandTeleports
-
-	TITLE_4.Name = "TITLE"
-	TITLE_4.Parent = _4PG4DefensesandTeleports
-	TITLE_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_4.BackgroundTransparency = 0.750
-	TITLE_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_4.BorderSizePixel = 0
-	TITLE_4.Position = UDim2.new(3.80518408e-08, 0, -0.000406073814, 0)
-	TITLE_4.Size = UDim2.new(0.99999994, 0, 0.10767255, 0)
-	TITLE_4.ZIndex = 2
-	TITLE_4.Font = Enum.Font.Bodoni
-	TITLE_4.Text = "DEFENSES & XTRAS."
-	TITLE_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_4.TextScaled = true
-	TITLE_4.TextSize = 14.000
-	TITLE_4.TextWrapped = true
-
-	UICorner_16.Parent = TITLE_4
-
-	UIStroke_37.Parent = TITLE_4
-	UIStroke_37.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_37.Thickness = 3.000
-	UIStroke_37.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_38.Parent = TITLE_4
-	UIStroke_38.Color = Color3.fromRGB(255, 181, 181)
-
-	AOEProtectionBTN.Name = "AOE ProtectionBTN"
-	AOEProtectionBTN.Parent = _4PG4DefensesandTeleports
-	AOEProtectionBTN.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	AOEProtectionBTN.BackgroundTransparency = 0.350
-	AOEProtectionBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AOEProtectionBTN.BorderSizePixel = 0
-	AOEProtectionBTN.Position = UDim2.new(3.80518408e-08, 0, 0.799307942, 0)
-	AOEProtectionBTN.Size = UDim2.new(0.342892736, 0, 0.200692013, 0)
-	AOEProtectionBTN.Font = Enum.Font.SourceSans
-	AOEProtectionBTN.Text = "<div><font color=\"#09a9e7\">U</font><font color=\"#179bdc\">L</font><font color=\"#248cd0\">T</font><font color=\"#327ec5\">R</font><font color=\"#3d72ba\">A</font><font color=\"#4766b0\"> </font><font color=\"#5259a5\">I</font><font color=\"#5c4d9a\">N</font><font color=\"#6c4a9a\">S</font><font color=\"#7d469a\">T</font><font color=\"#8d439a\">I</font><font color=\"#9348a6\">N</font><font color=\"#994db2\">C</font><font color=\"#9f52be\">T</font><font color=\"#a557ca\">:</font><font color=\"#8545d2\"> </font><font color=\"#6633db\">D</font><font color=\"#4621e3\">I</font><font color=\"#4e36d8\">S</font><font color=\"#564acd\">A</font><font color=\"#5e5fc1\">B</font><font color=\"#6673b6\">L</font><font color=\"#5e91c4\">E</font><font color=\"#55afd3\">D</font><font color=\"#4dcde1\">.</font></div>"
-	AOEProtectionBTN.RichText = true
-	AOEProtectionBTN.TextColor3 = Color3.fromRGB(103, 0, 10)
-	AOEProtectionBTN.TextScaled = true
-	AOEProtectionBTN.TextSize = 14.000
-	AOEProtectionBTN.TextWrapped = true
-
-	UIStroke_39.Parent = AOEProtectionBTN
-	UIStroke_39.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_39.Thickness = 3.000
-	UIStroke_39.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	AreaSizeINP.Name = "AreaSizeINP"
-	AreaSizeINP.Parent = _4PG4DefensesandTeleports
-	AreaSizeINP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	AreaSizeINP.BackgroundTransparency = 0.350
-	AreaSizeINP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AreaSizeINP.BorderSizePixel = 0
-	AreaSizeINP.Position = UDim2.new(0.00187952537, 0, 0.626297593, 0)
-	AreaSizeINP.Size = UDim2.new(0.344139636, 0, 0.173010409, 0)
-	AreaSizeINP.Font = Enum.Font.SourceSans
-	AreaSizeINP.PlaceholderColor3 = Color3.fromRGB(106, 0, 2)
-	AreaSizeINP.PlaceholderText = "Area Size"
-	AreaSizeINP.ShowNativeInput = false
-	AreaSizeINP.Text = ""
-	AreaSizeINP.TextColor3 = Color3.fromRGB(0, 0, 0)
-	AreaSizeINP.TextScaled = true
-	AreaSizeINP.TextSize = 14.000
-	AreaSizeINP.TextWrapped = true
-
-	UIStroke_40.Parent = AreaSizeINP
-	UIStroke_40.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_41.Parent = AreaSizeINP
-	UIStroke_41.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_41.Thickness = 3.000
-	UIStroke_41.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	WaitTimeINP.Name = "WaitTimeINP"
-	WaitTimeINP.Parent = _4PG4DefensesandTeleports
-	WaitTimeINP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	WaitTimeINP.BackgroundTransparency = 0.350
-	WaitTimeINP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	WaitTimeINP.BorderSizePixel = 0
-	WaitTimeINP.Position = UDim2.new(0.00187952805, 0, 0.453287214, 0)
-	WaitTimeINP.Size = UDim2.new(0.344139636, 0, 0.173010409, 0)
-	WaitTimeINP.Font = Enum.Font.SourceSans
-	WaitTimeINP.PlaceholderColor3 = Color3.fromRGB(106, 0, 2)
-	WaitTimeINP.PlaceholderText = "Wait Time"
-	WaitTimeINP.ShowNativeInput = false
-	WaitTimeINP.Text = ""
-	WaitTimeINP.TextColor3 = Color3.fromRGB(0, 0, 0)
-	WaitTimeINP.TextScaled = true
-	WaitTimeINP.TextSize = 14.000
-	WaitTimeINP.TextWrapped = true
-
-	UIStroke_42.Parent = WaitTimeINP
-	UIStroke_42.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_43.Parent = WaitTimeINP
-	UIStroke_43.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_43.Thickness = 3.000
-	UIStroke_43.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	GarageYeetBTN.Name = "GarageYeetBTN"
-	GarageYeetBTN.Parent = _4PG4DefensesandTeleports
-	GarageYeetBTN.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	GarageYeetBTN.BackgroundTransparency = 0.350
-	GarageYeetBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GarageYeetBTN.BorderSizePixel = 0
-	GarageYeetBTN.Position = UDim2.new(0.346019208, 0, 0.799307883, 0)
-	GarageYeetBTN.Size = UDim2.new(0.653980672, 0, 0.200692013, 0)
-	GarageYeetBTN.Font = Enum.Font.SourceSans
-	GarageYeetBTN.Text = "<div><font color=\"#cea400\">G</font><font color=\"#d2a600\">a</font><font color=\"#d6a900\">r</font><font color=\"#daab00\">a</font><font color=\"#dead00\">g</font><font color=\"#e2af00\">e</font><font color=\"#e7b200\"> </font><font color=\"#ebb400\">E</font><font color=\"#efb600\">n</font><font color=\"#f3b800\">t</font><font color=\"#f7bb00\">r</font><font color=\"#fbbd00\">a</font><font color=\"#ffbf00\">n</font><font color=\"#ffc208\">c</font><font color=\"#ffc611\">e</font><font color=\"#fec919\"> </font><font color=\"#fecc21\">T</font><font color=\"#fecf2a\">e</font><font color=\"#fed332\">l</font><font color=\"#fed63b\">e</font><font color=\"#fed943\">p</font><font color=\"#fddc4b\">o</font><font color=\"#fde054\">r</font><font color=\"#fde35c\">t</font></div>"
-	GarageYeetBTN.RichText = true
-	GarageYeetBTN.TextColor3 = Color3.fromRGB(103, 0, 10)
-	GarageYeetBTN.TextScaled = true
-	GarageYeetBTN.TextSize = 14.000
-	GarageYeetBTN.TextWrapped = true
-
-	UIStroke_44.Parent = GarageYeetBTN
-	UIStroke_44.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_44.Thickness = 3.000
-	UIStroke_44.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	GarageNoINP.Name = "GarageNoINP"
-	GarageNoINP.Parent = _4PG4DefensesandTeleports
-	GarageNoINP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	GarageNoINP.BackgroundTransparency = 0.350
-	GarageNoINP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GarageNoINP.BorderSizePixel = 0
-	GarageNoINP.Position = UDim2.new(0.346019328, 0, 0.626297593, 0)
-	GarageNoINP.Size = UDim2.new(0.655227661, 0, 0.173010409, 0)
-	GarageNoINP.Font = Enum.Font.SourceSans
-	GarageNoINP.PlaceholderColor3 = Color3.fromRGB(106, 0, 2)
-	GarageNoINP.PlaceholderText = "Garage Number"
-	GarageNoINP.ShowNativeInput = false
-	GarageNoINP.Text = ""
-	GarageNoINP.TextColor3 = Color3.fromRGB(255, 0, 4)
-	GarageNoINP.TextScaled = true
-	GarageNoINP.TextSize = 14.000
-	GarageNoINP.TextWrapped = true
-
-	UIStroke_45.Parent = GarageNoINP
-	UIStroke_45.Color = Color3.fromRGB(255, 181, 181)
-
-	UIStroke_46.Parent = GarageNoINP
-	UIStroke_46.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_46.Thickness = 3.000
-	UIStroke_46.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	GOKUSFX.Name = "GOKUSFX"
-	GOKUSFX.Parent = _4PG4DefensesandTeleports
-	GOKUSFX.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	GOKUSFX.BackgroundTransparency = 0.350
-	GOKUSFX.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GOKUSFX.BorderSizePixel = 0
-	GOKUSFX.Position = UDim2.new(0.0020842962, 0, 0.107266359, 0)
-	GOKUSFX.Size = UDim2.new(0.342892796, 0, .32, 0)
-	GOKUSFX.Font = Enum.Font.SourceSans
-	GOKUSFX.Text = "<div><font color=\"#09a9e7\">S</font><font color=\"#1e94d6\">F</font><font color=\"#327ec5\">X</font><font color=\"#5c4d9a\"> </font><font color=\"#75489a\">D</font><font color=\"#8d439a\">I</font><font color=\"#a557ca\">S</font><font color=\"#763cd7\">A</font><font color=\"#4621e3\">B</font><font color=\"#6673b6\">L</font><font color=\"#5aa0cc\">E</font><font color=\"#4dcde1\">D</font></div>"
-	GOKUSFX.RichText = true
-	GOKUSFX.TextColor3 = Color3.fromRGB(103, 0, 10)
-	GOKUSFX.TextScaled = true
-	GOKUSFX.TextSize = 14.000
-	GOKUSFX.TextWrapped = true
-
-	UIStroke_47.Parent = GOKUSFX
-	UIStroke_47.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_47.Thickness = 3.000
-	UIStroke_47.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	TITLE_5.Name = "TITLE"
-	TITLE_5.Parent = _4PG4DefensesandTeleports
-	TITLE_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_5.BorderSizePixel = 0
-	TITLE_5.Position = UDim2.new(0.346019328, 0, 0.106726125, 0)
-	TITLE_5.Size = UDim2.new(0.652738094, 0, 0.5195719, 0)
-	TITLE_5.ZIndex = 2
-	TITLE_5.Font = Enum.Font.Bodoni
-	TITLE_5.Text = "This (might) be filled in with something later, Who knows."
-	TITLE_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TITLE_5.TextScaled = true
-	TITLE_5.TextSize = 14.000
-	TITLE_5.TextWrapped = true
-
-	UICorner_17.Parent = TITLE_5
-
-	UIStroke_48.Parent = TITLE_5
-	UIStroke_48.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_48.Thickness = 3.000
-	UIStroke_48.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_49.Parent = TITLE_5
-	UIStroke_49.Color = Color3.fromRGB(255, 181, 181)
-
-	UICorner_18.Parent = PAGES
-
-	PageScrolling.Name = "Page Scrolling"
-	PageScrolling.Parent = MainGUI
-	PageScrolling.Active = true
-	PageScrolling.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	PageScrolling.BackgroundTransparency = 0.350
-	PageScrolling.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PageScrolling.BorderSizePixel = 0
-	PageScrolling.Size = UDim2.new(1, 0, 0.176638156, 0)
-	PageScrolling.ScrollBarImageColor3 = Color3.fromRGB(255, 0, 4)
-	PageScrolling.BottomImage = "rbxassetid://6939148322"
-	PageScrolling.CanvasSize = UDim2.new(20, 0, 0, 0)
-	PageScrolling.MidImage = "rbxassetid://6939148322"
-	PageScrolling.ScrollBarThickness = 10
-	PageScrolling.TopImage = "rbxassetid://6939148322"
-	PageScrolling.VerticalScrollBarInset = Enum.ScrollBarInset.Always
-	PageScrolling.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-	UIGridLayout.Parent = PageScrolling
-	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIGridLayout.CellSize = UDim2.new(0.00999999978, 0, 0.800000012, 0)
-
-	UIStroke_52.Parent = PageScrolling
-	UIStroke_52.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_52.Transparency = 0.400
-	UIStroke_52.Thickness = 2.000
-	UIStroke_52.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	OpenCloseButton.Name = "OpenCloseButton"
-	OpenCloseButton.Parent = MANTASPACK
-	OpenCloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	OpenCloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	OpenCloseButton.BorderSizePixel = 0
-	OpenCloseButton.Position = UDim2.new(0.105726875, 0, 0.92722708, 0)
-	OpenCloseButton.Size = UDim2.new(0.161233485, 0, 0.0501882061, 0)
-	OpenCloseButton.Font = Enum.Font.Bodoni
-	OpenCloseButton.Text = "GUI [P]"
-	OpenCloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-	OpenCloseButton.TextScaled = true
-	OpenCloseButton.TextSize = 14.000
-	OpenCloseButton.TextWrapped = true
-
-	UICorner_19.Parent = OpenCloseButton
-
-	UIStroke_53.Parent = OpenCloseButton
-	UIStroke_53.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_53.Thickness = 3.000
-	UIStroke_53.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	PAGEBTN.Name = "PAGEBTN"
-	--PAGEBTN.Parent = game.StarterGui["MANTA'S PACK."].Handler
-	PAGEBTN.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	PAGEBTN.BackgroundTransparency = 0.500
-	PAGEBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PAGEBTN.BorderSizePixel = 0
-	PAGEBTN.Size = UDim2.new(0, 200, 0, 50)
-	PAGEBTN.Font = Enum.Font.SourceSans
-	PAGEBTN.Text = "PG.1"
-	PAGEBTN.TextColor3 = Color3.fromRGB(0, 0, 0)
-	PAGEBTN.TextScaled = true
-	PAGEBTN.TextSize = 14.000
-	PAGEBTN.TextWrapped = true
-
-	UIStroke_54.Parent = PAGEBTN
-	UIStroke_54.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_54.Thickness = 3.000
-	UIStroke_54.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_55.Parent = PAGEBTN
-	UIStroke_55.Color = Color3.fromRGB(255, 123, 123)
-
-	UICorner_20.Parent = PAGEBTN
-
-	PLAYERBTN.Name = "PLAYERBTN"
-	--PLAYERBTN.Parent = game.StarterGui["MANTA'S PACK."].Handler
-	PLAYERBTN.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	PLAYERBTN.BackgroundTransparency = 0.500
-	PLAYERBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PLAYERBTN.BorderSizePixel = 0
-	PLAYERBTN.Size = UDim2.new(0.949999988, 0, 0.100000001, 0)
-	PLAYERBTN.Font = Enum.Font.SourceSans
-	PLAYERBTN.Text = "JonathansalazaDumb"
-	PLAYERBTN.TextColor3 = Color3.fromRGB(0, 0, 0)
-	PLAYERBTN.TextScaled = true
-	PLAYERBTN.TextSize = 14.000
-	PLAYERBTN.TextWrapped = true
-
-	UIStroke_56.Parent = PLAYERBTN
-	UIStroke_56.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_56.Thickness = 3.000
-	UIStroke_56.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	UIStroke_57.Parent = PLAYERBTN
-	UIStroke_57.Color = Color3.fromRGB(255, 123, 123)
-
-	UICorner_21.Parent = PLAYERBTN
-	-- Scripts:
-
-	local function AZILZ_script() -- MainGUI.Dragify 
-		local script = Instance.new('LocalScript', MainGUI)
-
-		local UserInputService = game:GetService("UserInputService")
-
-		local gui = script.Parent
-
-		local dragging
-		local dragInput
-		local dragStart
-		local startPos
-
-		local function update(input)
-			if _G.Draggable == false then
-				return
-			end
-			local delta = input.Position - dragStart
-			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		end
-
-		gui.InputBegan:Connect(function(input)
-			if _G.Draggable == false then
-				return
-			end
-			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-				dragging = true
-				dragStart = input.Position
-				startPos = gui.Position
-
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragging = false
-					end
-				end)
-			end
-		end)
-
-		gui.InputChanged:Connect(function(input)
-			if _G.Draggable == false then
-				return
-			end
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				dragInput = input
-			end
-		end)
-
-		UserInputService.InputChanged:Connect(function(input)
-			if _G.Draggable == false then
-				return
-			end
-			if input == dragInput and dragging then
-				update(input)
-			end
-		end)
-	end
-	coroutine.wrap(AZILZ_script)()
-	local function NOLQENI_script() -- MANTASPACK.Handler 
-		local script = Instance.new('LocalScript', MANTASPACK)
-
-		local SERVICES = {
-			Player = game:GetService("Players");
-			Work = game:GetService("Workspace");
-			Light = game:GetService("Lighting");
-			Sound = game:GetService("SoundService");
-			Run = game:GetService("RunService");
-			Deb = game:GetService("Debris");
-			UInp = game:GetService("UserInputService");
-			Tween = game:GetService("TweenService");
-		}
+if _G.ActuallyFireTheGui == true then
+local SERVICES = {
+	Player = game:GetService("Players");
+	Work = game:GetService("Workspace");
+	Light = game:GetService("Lighting");
+	Sound = game:GetService("SoundService");
+	Run = game:GetService("RunService");
+	Deb = game:GetService("Debris");
+	UInp = game:GetService("UserInputService");
+	Tween = game:GetService("TweenService");
+}
+_G.Draggable = true
+local PACKHOLDER = script.Parent
+local MAIN = PACKHOLDER.MainGUI
+local BUTTON = PACKHOLDER.OpenCloseButton
+local PAGES = MAIN.PAGES
+local OURGARRAGE = {
+	PARTS = nil,
+	NUMBER = nil
+}
+repeat
+	task.wait()
+until (SERVICES.Player.LocalPlayer.Team.Name ~= nil)
+OURGARRAGE.NUMBER = tonumber(string.sub(SERVICES.Player.LocalPlayer.Team.Name,8,8))
+OURGARRAGE.PARTS = SERVICES.Work.Garages["Garage" .. string.sub(SERVICES.Player.LocalPlayer.Team.Name,7,8)]:FindFirstChild("Parts")
+local CONFIG = {
+	SOUNDSTUFF = {
+		SOUNDREPLACER = Instance.new("Sound",SERVICES.Sound);
+		SOUNDMUTER = Instance.new("SoundGroup",SERVICES.Sound);
+		MUTED = false;
+	},
+	GOKUSTUFF = {
+		FRAMETIME = 1,
+		AREASIZE =50,
+		MASTEREDULTRAINSTINCT = false,
+		GOKUNOISES = false,
+	},
+	BUOY = {
+		SPEED = 10000;
+		ENFORCEDRIGIDITY = false;
+		GRYOSTUFF = {
+			SMOOTHNESS = 500;
+			SPEED = 3000;
+		};
+		Forces = {};
+		ACTIVE = false;
+		TARGET = nil;
+		CLICKENABLE = false;
+		FORMATION = 1;
+		POSITION = Vector3.new(0,0,0);
+	}
+}
+local IMMUNESOUNDS = {}
+local DB = false
+function OpenCheck()
+	if DB == true then return end
+	if MAIN.Visible == false then
+		DB = true
+		MAIN.Visible = true
+		local Inf = TweenInfo.new(1,Enum.EasingStyle.Sine,Enum.EasingDirection.In,0,false,0)
+		SERVICES.Tween:Create(MAIN,Inf,{Size =UDim2.new(0.707,0,0.44,0),Position = UDim2.new(MAIN.Position.X.Scale/2,0,MAIN.Position.Y.Scale/2,0) }):Play()
+		task.wait(1)
+		DB = false
 		_G.Draggable = true
-		local PACKHOLDER = script.Parent
-		local MAIN = PACKHOLDER.MainGUI
-		local BUTTON = PACKHOLDER.OpenCloseButton
-		local PAGES = MAIN.PAGES
-		local OURGARRAGE = {
-			PARTS = nil,
-			NUMBER = nil
-		}
-		repeat
-			task.wait()
-		until (SERVICES.Player.LocalPlayer.Team.Name ~= nil)
-		OURGARRAGE.NUMBER = tonumber(string.sub(SERVICES.Player.LocalPlayer.Team.Name,8,8))
-		OURGARRAGE.PARTS = SERVICES.Work.Garages["Garage" .. string.sub(SERVICES.Player.LocalPlayer.Team.Name,7,8)]:FindFirstChild("Parts")
-		local CONFIG = {
-			SOUNDSTUFF = {
-				SOUNDREPLACER = Instance.new("Sound",SERVICES.Sound);
-				SOUNDMUTER = Instance.new("SoundGroup",SERVICES.Sound);
-				MUTED = false;
-			},
-			GOKUSTUFF = {
-				FRAMETIME = 1,
-				AREASIZE =50,
-				MASTEREDULTRAINSTINCT = false,
-				GOKUNOISES = false,
-			},
-			BUOY = {
-				SPEED = 10000;
-				ENFORCEDRIGIDITY = false;
-				GRYOSTUFF = {
-					SMOOTHNESS = 500;
-					SPEED = 3000;
-				};
-				Forces = {};
-				ACTIVE = false;
-				TARGET = nil;
-				CLICKENABLE = false;
-				FORMATION = 1;
-				POSITION = Vector3.new(0,0,0);
-			}
-		}
-		local IMMUNESOUNDS = {}
-		local DB = false
-		local function OpenCheck()
-			if DB == true then return end
-			if MAIN.Visible == false then
-				DB = true
-				MAIN.Visible = true
-				local Inf = TweenInfo.new(1,Enum.EasingStyle.Sine,Enum.EasingDirection.In,0,false,0)
-				SERVICES.Tween:Create(MAIN,Inf,{Size =UDim2.new(0.707,0,0.44,0),Position = UDim2.new(MAIN.Position.X.Scale/2,0,MAIN.Position.Y.Scale/2,0) }):Play()
-				task.wait(1)
-				DB = false
-				_G.Draggable = true
-			else
-				DB = true
-				_G.Draggable = false
-				local Inf = TweenInfo.new(1,Enum.EasingStyle.Back,Enum.EasingDirection.In,0,false,0)
-				SERVICES.Tween:Create(MAIN,Inf,{Size =UDim2.new(0,0,0,0),Position = UDim2.new(MAIN.Position.X.Scale*2,0,MAIN.Position.Y.Scale*2,0) }):Play()
-				task.wait(1)
-				MAIN.Visible = false
-				DB = false
-			end
-		end
-		BUTTON.MouseButton1Down:Connect(OpenCheck)
-		local QUOTES = {
-			"THREE HERO GROUPS FELL; HERO ASSOCIATION, A.P.O.C, FAILURE MANAGEMENT ASSOCIATION. WHAT ELSE DO YOU THINK CAN STAND IN OUR WAY.",
-			"Back here again, I see.",
-			"Reminder to NOT form any group, as they're known for disbanding.",
-			"Currently the only working and non encrypted script for bnd there is.",
-			"Smoking their pack, arent we?",
-			"Bodies tremble beneath us.",
-			"RGM King would be proud, if he weren't nerfed to the ground in bnd.",
-			"OBSERVER? Who's that moron.",
-			"Reminder, the person who made this is the FIRST person to get banned on BND.",
-			"The end version 3, Albiet reliable, does have one key drawback. Its that it cannot have a massive outer shell.",
-			"FAILURE MANAGEMENT ASSOCIATION? Gotta hand it to you, they turned themselves into eachother.",
-			"HERO ASSOCIATION?, Dead as hell, only 1 active member.",
-			"APOC?, Holy hell how do you even know their name.",
-			"Reminder: only two people hold the weld bomb in its prime, Guess who those innocent fucks are.",
-			"Just to remind you, The end version 3 is a method of humanely euthanizing a server, Imagine the other ways that other games didnt.",
-			"Smoking fish today.",
-			"RGM King, PCB Emperor, Chaos/Entropy Embodiments, 4_04, OBSERVER, Grand Tree, and Gilded knight are proud."
-
-
-		}
-		local GuiNChildren = {}
-		for i,v in pairs(MAIN:GetDescendants()) do
-			if (v.Name == "TITLE") then continue end
-			if (v.Name == "UICorner") then continue end
-			if (v.Name == "UIStroke") then continue end
-			GuiNChildren[v.Name] = v;
-		end
-		--local PAGEBTN = script.PAGEBTN
-		local PagesInOrderFFS = {
-			nil,nil,nil,nil,nil
-		}
-		for i,v in pairs(PAGES:GetChildren()) do
-			if not (v:IsA("Frame")) then continue end
-			local NUM = tonumber(string.sub(v.Name,1,1))
-			PagesInOrderFFS[NUM] = v
-		end
-		for i,v in pairs(PagesInOrderFFS) do
-			local PGClone = PAGEBTN:Clone()
-			PGClone.Text =string.sub(v.Name,2,string.len(v.Name))
-			PGClone.Activated:Connect(function()
-				for i,t in pairs(PAGES:GetChildren()) do
-					if not (t:IsA("Frame")) then continue end
-					t.Visible =false
-				end
-				v.Visible = true
-			end)
-			PGClone.Parent = GuiNChildren["Page Scrolling"]
-
-		end
-		--MAIN.Dragify.Enabled = true
-		GuiNChildren["QUOTEOFTHEDAY"].Text = QUOTES[math.random(1,#QUOTES)]
-		GuiNChildren["YOURNAME"].Text = SERVICES.Player.LocalPlayer.Name
-		GuiNChildren["YOURSELF."].Image = SERVICES.Player:GetUserThumbnailAsync(SERVICES.Player.LocalPlayer.UserId,Enum.ThumbnailType.AvatarBust,Enum.ThumbnailSize.Size420x420)
-		GuiNChildren["IYBtn"].Activated:Connect(function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-		end)
-		GuiNChildren["ScriptHubBTN"].Activated:Connect(function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Qrto1/working/main/pc"))()
-		end)
-		GuiNChildren["AudioInputID"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			CONFIG.SOUNDSTUFF.SOUNDREPLACER.SoundId ="rbxassetid://".. GuiNChildren["AudioInputID"].Text;
-		end)
-		GuiNChildren["AudioInputVolume"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			CONFIG.SOUNDSTUFF.SOUNDREPLACER.Volume =tonumber(GuiNChildren["AudioInputVolume"].Text);
-		end)
-		GuiNChildren["AreaSizeINP"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			CONFIG.GOKUSTUFF.AREASIZE =tonumber(GuiNChildren["AreaSizeINP"].Text);
-		end)
-		GuiNChildren["WaitTimeINP"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			CONFIG.GOKUSTUFF.FRAMETIME =tonumber(GuiNChildren["WaitTimeINP"].Text);
-		end)
-		GuiNChildren["GarageYeetBTN"].Activated:Connect(function()
-			local Number =  tonumber(GuiNChildren["GarageNoINP"].Text)
-			if Number == 1 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-2595, 2.5, -2677))
-			elseif Number == 2 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-1503, 2.5, -2682))
-			elseif Number == 3 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-404.493, 2.75, -2698))
-			elseif Number == 4 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(202, 2.5, -1831))
-			elseif Number == 5 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(193, 2.5, -352))
-			elseif Number == 6 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-400, 2.5, 500))
-			elseif Number == 7 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-1493, 2.5, 510))
-			elseif Number == 8 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-2604, 2.5, 514))
-			elseif Number == 9 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-3101, 2.5, -335))
-			elseif Number == 10 then
-				SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-3109, 2.75, -1837))
-			else
-				local Text = string.upper(GuiNChildren["GarageNoINP"].Text)
-				if Text == "AMONG" then
-					SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-42214.273, 16.586, 41624.996))
-				elseif Text == "MOON" then
-					SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-2118, 99860.5, -961))
-				end
-				GuiNChildren["GarageNoINP"].Text = "INVALID NUMBER"
-			end
-		end)
-		GuiNChildren["AudioSilenceBTN"].Activated:Connect(function()
-			if CONFIG.SOUNDSTUFF.MUTED == false then
-				CONFIG.SOUNDSTUFF.MUTED = true
-				CONFIG.SOUNDSTUFF.SOUNDREPLACER:Play()
-				GuiNChildren["AudioSilenceBTN"].Text = [[<div><font color="#09a9e7">A</font><font color="#1e94d6">U</font><font color="#327ec5">D</font><font color="#4766b0">I</font><font color="#5c4d9a">O</font><font color="#75489a">S</font><font color="#8d439a"> </font><font color="#954aaa">S</font><font color="#9d50ba">I</font><font color="#a557ca">L</font><font color="#763cd7">E</font><font color="#4621e3">N</font><font color="#564acd">C</font><font color="#6673b6">E</font><font color="#5aa0cc">D</font><font color="#4dcde1">.</font></div>]]
-			else
-				CONFIG.SOUNDSTUFF.MUTED = false
-				GuiNChildren["AudioSilenceBTN"].Text =[[<div><font color="#09a9e7">M</font><font color="#139edf">a</font><font color="#1e94d6">k</font><font color="#2889ce">e</font><font color="#327ec5"> </font><font color="#406eb7">a</font><font color="#4e5da8">u</font><font color="#5c4d9a">d</font><font color="#684b9a">i</font><font color="#75489a">o</font><font color="#81469a"> </font><font color="#8d439a">s</font><font color="#9348a6">h</font><font color="#994db2">u</font><font color="#9f52be">t</font><font color="#a557ca"> </font><font color="#8d4ad0">t</font><font color="#763cd7">h</font><font color="#5e2fdd">e</font><font color="#4621e3"> </font><font color="#513cd4">f</font><font color="#5b58c5">u</font><font color="#6673b6">c</font><font color="#608ac1">k</font><font color="#5aa0cc"> </font><font color="#53b7d6">u</font><font color="#4dcde1">p</font></div><div></div>]]
-				CONFIG.SOUNDSTUFF.SOUNDREPLACER:Pause()
-			end
-		end)
-		GuiNChildren["SpeedTextBox"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			local Num =  tonumber(GuiNChildren["SpeedTextBox"].Text);
-			if Num == nil then
-				Num = 1
-			end
-			if Num < 0 then
-				Num = 0
-			end
-			CONFIG.BUOY.SPEED =Num;
-		end)
-
-		GuiNChildren["GyroSpeedTextBox"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			local Num =  tonumber(GuiNChildren["GyroSpeedTextBox"].Text);
-			if Num == nil then
-				Num = 1
-			end
-			if Num < 0 then
-				Num = 0
-			end
-			CONFIG.BUOY.GRYOSTUFF.SPEED =Num;
-		end)
-		GuiNChildren["GyroSpeedTextBox"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			local Num =  tonumber(GuiNChildren["GyroSpeedTextBox"].Text);
-			if Num == nil then
-				Num = 1
-			end
-			if Num < 0 then
-				Num = 0
-			end
-			CONFIG.BUOY.GRYOSTUFF.SPEED =Num;
-		end)
-		GuiNChildren["GyroSmoothnessTextBox"].Changed:Connect(function(Property)
-			if Property ~= "Text" then return end
-			local Num =  tonumber(GuiNChildren["GyroSmoothnessTextBox"].Text);
-			if Num == nil then
-				Num = 1
-			end
-			if Num < 0 then
-				Num = 0
-			end
-			CONFIG.BUOY.GRYOSTUFF.SMOOTHNESS = Num
-		end)
-		GuiNChildren["TargetChooseButton"].Activated:Connect(function()
-			if CONFIG.BUOY.CLICKENABLE == false then
-				CONFIG.BUOY.CLICKENABLE = true
-				GuiNChildren["TargetChooseButton"].Text = "Click to Move"
-				GuiNChildren["NonPlayerOverlay"].Visible = true
-				GuiNChildren["PlayerOverlay"].Visible = false
-			else
-				CONFIG.BUOY.CLICKENABLE = false
-				GuiNChildren["NonPlayerOverlay"].Visible = false
-				GuiNChildren["PlayerOverlay"].Visible = true
-				GuiNChildren["TargetChooseButton"].Text = "Player Target"
-			end
-		end)
-		GuiNChildren["FormationChooseButton"].Activated:Connect(function()
-			if CONFIG.BUOY.FORMATION+1 > 2 then
-				CONFIG.BUOY.FORMATION = 1
-			else
-				CONFIG.BUOY.FORMATION +=1
-			end
-			if CONFIG.BUOY.FORMATION == 1 then
-				GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#09a9e7">F</font><font color="#179bdc">O</font><font color="#248cd0">R</font><font color="#327ec5">M</font><font color="#3d72ba">A</font><font color="#4766b0">T</font><font color="#5259a5">I</font><font color="#5c4d9a">O</font><font color="#6c4a9a">N</font><font color="#7d469a"> </font><font color="#8d439a">/</font><font color="#954aaa">/</font><font color="#9d50ba"> </font><font color="#a557ca">D</font><font color="#8545d2">I</font><font color="#6633db">R</font><font color="#4621e3">E</font><font color="#4e36d8">C</font><font color="#564acd">T</font><font color="#5e5fc1"> </font><font color="#6673b6">P</font><font color="#5e91c4">A</font><font color="#55afd3">T</font><font color="#4dcde1">H</font></div>]]
-			elseif CONFIG.BUOY.FORMATION == 2 then
-				GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#09a9e7">F</font><font color="#1e94d6">O</font><font color="#327ec5">R</font><font color="#406eb7">M</font><font color="#4e5da8">A</font><font color="#5c4d9a">T</font><font color="#75489a">I</font><font color="#8d439a">O</font><font color="#954aaa">N</font><font color="#9d50ba"> </font><font color="#a557ca">/</font><font color="#763cd7">/</font><font color="#4621e3"> </font><font color="#513cd4">S</font><font color="#5b58c5">P</font><font color="#6673b6">E</font><font color="#5aa0cc">E</font><font color="#4dcde1">N</font></div>]]
-			end
-		end)
-		GuiNChildren["GOKUSFX"].Activated:Connect(function()
-			if CONFIG.GOKUSTUFF.GOKUNOISES == false then
-				CONFIG.GOKUSTUFF.GOKUNOISES = true
-				GuiNChildren["GOKUSFX"].Text = [[<div><font color="#09a9e7">S</font><font color="#1e94d6">F</font><font color="#327ec5">X</font><font color="#5c4d9a"> </font><font color="#75489a">E</font><font color="#8d439a">N</font><font color="#a557ca">A</font><font color="#763cd7">B</font><font color="#4621e3">L</font><font color="#6673b6">E</font><font color="#5aa0cc">D</font><font color="#4dcde1">.</font></div>]]
-			else
-				CONFIG.GOKUSTUFF.GOKUNOISES = false
-				GuiNChildren["GOKUSFX"].Text = [[<div><font color="#09a9e7">S</font><font color="#1e94d6">F</font><font color="#327ec5">X</font><font color="#5c4d9a"> </font><font color="#75489a">D</font><font color="#8d439a">I</font><font color="#a557ca">S</font><font color="#763cd7">A</font><font color="#4621e3">B</font><font color="#6673b6">L</font><font color="#5aa0cc">E</font><font color="#4dcde1">D</font></div>]]
-			end
-		end)
-		GuiNChildren["WaterBuoyInitiator"].Activated:Connect(function()
-			if CONFIG.BUOY.ACTIVE == false then
-				CONFIG.BUOY.ACTIVE  = true
-				GuiNChildren["WaterBuoyInitiator"].Text = [[<div><font color="#bf74fd">B</font><font color="#a680fb">U</font><font color="#8c8cf9">O</font><font color="#8bc3f9">Y</font><font color="#89f9f9"> </font><font color="#84f8bc">I</font><font color="#7ef67e">N</font><font color="#baf679">I</font><font color="#f6f674">T</font><font color="#f4d77a">I</font><font color="#f2b87f">A</font><font color="#f79d81">T</font><font color="#fb8282">E</font></div>]]
-			else
-				CONFIG.BUOY.ACTIVE  = false
-				GuiNChildren["WaterBuoyInitiator"].Text = [[<div><font color="#bf74fd">B</font><font color="#b27afc">U</font><font color="#a680fb">O</font><font color="#9986fa">Y</font><font color="#8c8cf9"> </font><font color="#8bb0f9">F</font><font color="#8ad5f9">L</font><font color="#89f9f9">I</font><font color="#86f8da">N</font><font color="#84f8bc">G</font><font color="#81f79d">I</font><font color="#7ef67e">N</font><font color="#9cf67c">G</font><font color="#baf679"> </font><font color="#d8f677">I</font><font color="#f6f674">N</font><font color="#f5e178">I</font><font color="#f3cd7b">T</font><font color="#f2b87f">I</font><font color="#f4ab80">A</font><font color="#f79d81">T</font><font color="#f99081">E</font><font color="#fb8282">D</font></div>]]
-			end
-		end)
-
-		GuiNChildren["AOE ProtectionBTN"].Activated:Connect(function()
-			if CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT == false then
-				CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT = true
-				GuiNChildren["AOE ProtectionBTN"].Text =[[<div><font color="#09a9e7">U</font><font color="#179bdc">L</font><font color="#248cd0">T</font><font color="#327ec5">R</font><font color="#3d72ba">A</font><font color="#4766b0"> </font><font color="#5259a5">I</font><font color="#5c4d9a">N</font><font color="#6c4a9a">S</font><font color="#7d469a">T</font><font color="#8d439a">I</font><font color="#9348a6">N</font><font color="#994db2">C</font><font color="#9f52be">T</font><font color="#a557ca"> </font><font color="#8545d2">:</font><font color="#6633db"> </font><font color="#4621e3">E</font><font color="#4e36d8">N</font><font color="#564acd">A</font><font color="#5e5fc1">B</font><font color="#6673b6">L</font><font color="#5e91c4">E</font><font color="#55afd3">D</font><font color="#4dcde1">.</font></div>]]
-			else
-				CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT = false
-				GuiNChildren["AOE ProtectionBTN"].Text = [[<div><font color="#09a9e7">U</font><font color="#179bdc">L</font><font color="#248cd0">T</font><font color="#327ec5">R</font><font color="#3d72ba">A</font><font color="#4766b0"> </font><font color="#5259a5">I</font><font color="#5c4d9a">N</font><font color="#6c4a9a">S</font><font color="#7d469a">T</font><font color="#8d439a">I</font><font color="#9348a6">N</font><font color="#994db2">C</font><font color="#9f52be">T</font><font color="#a557ca">:</font><font color="#8545d2"> </font><font color="#6633db">D</font><font color="#4621e3">I</font><font color="#4e36d8">S</font><font color="#564acd">A</font><font color="#5e5fc1">B</font><font color="#6673b6">L</font><font color="#5e91c4">E</font><font color="#55afd3">D</font><font color="#4dcde1">.</font></div>]]
-			end
-		end)
-		GuiNChildren["ENFORCED FLINGING"].Activated:Connect(function()
-			if CONFIG.BUOY.ENFORCEDRIGIDITY == false then
-				CONFIG.BUOY.ENFORCEDRIGIDITY = true
-				GuiNChildren["ENFORCED FLINGING"].Text =[[<div><font color="#c91919">E</font><font color="#cc2a15">N</font><font color="#cf3c12">F</font><font color="#d24d0e">O</font><font color="#d45e0b">R</font><font color="#d76f07">C</font><font color="#da8104">E</font><font color="#dd9200">D</font><font color="#da8104"> </font><font color="#d76f07">B</font><font color="#d45e0b">U</font><font color="#d24d0e">O</font><font color="#cf3c12">Y</font><font color="#cc2a15">S</font><font color="#c91919">.</font></div>]]
-			else
-				CONFIG.BUOY.ENFORCEDRIGIDITY = false
-				GuiNChildren["ENFORCED FLINGING"].Text = [[<div><font color="#bf74fd">U</font><font color="#ae7cfc">n</font><font color="#9d84fa">e</font><font color="#8c8cf9">n</font><font color="#8bc3f9">f</font><font color="#89f9f9">o</font><font color="#85f8d0">r</font><font color="#82f7a7">c</font><font color="#7ef67e">e</font><font color="#baf679">d</font><font color="#f6f674"> </font><font color="#f5e178">B</font><font color="#f3cd7b">u</font><font color="#f2b87f">o</font><font color="#f79d81">y</font><font color="#fb8282">s</font></div>]]
-			end
-		end)
-		task.spawn(function()
-			while task.wait() do
-				if Dead then break end
-				pcall(function()
-					while CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT == true do
-						local CHAR = SERVICES.Player.LocalPlayer.Character
-						local HRP = CHAR:FindFirstChild("HumanoidRootPart")
-						if HRP == nil then
-							warn("YOU ARE DEAD.")
-						end
-						local GOKUPART = Instance.new('Part')
-						GOKUPART.Position = HRP.Position
-						GOKUPART.Size = Vector3.new(CONFIG.GOKUSTUFF.AREASIZE,CONFIG.GOKUSTUFF.AREASIZE,CONFIG.GOKUSTUFF.AREASIZE)
-						local OLDHRPPOS = HRP.CFrame
-						for i,v in pairs(SERVICES.Work:GetPartsInPart(GOKUPART)) do
-							if (string.find(v.Name, "Bumper") or string.find(v.Name, "Spike")) and (not (v:IsDescendantOf(OURGARRAGE.PARTS))) then
-								task.spawn(function()
-									CHAR:PivotTo(OLDHRPPOS + (CONFIG.GOKUSTUFF.AREASIZE*(OLDHRPPOS.Position - v.Position).Unit))
-								end)
-								if CONFIG.GOKUSTUFF.GOKUNOISES == true then
-									local Sound = Instance.new("Sound",SERVICES.Sound)
-									Sound.SoundId = "rbxassetid://6820466812"
-									Sound.Playing = true
-									SERVICES.Deb:AddItem(Sound,2)
-								end
-							else
-								GOKUPART.Anchored = true
-								GOKUPART.CanCollide = false
-								GOKUPART.Transparency = .5
-								GOKUPART.Shape = Enum.PartType.Ball
-								GOKUPART.Material = Enum.Material.ForceField
-								GOKUPART.Color = Color3.new(0.133333, 0.623529, 1)
-								GOKUPART.Parent = workspace
-								SERVICES.Deb:AddItem(GOKUPART,.1)
-
-							end
-						end
-						task.wait(CONFIG.GOKUSTUFF.FRAMETIME)
-					end
-				end)
-			end	
-		end)
-		local Mouse = SERVICES.Player.LocalPlayer:GetMouse()
-		Mouse.Button1Down:Connect(function()
-			if CONFIG.BUOY.CLICKENABLE == true then
-				local Temp = Mouse.Hit
-				CONFIG.BUOY.POSITION =  Vector3.new(Temp.X,Temp.Y,Temp.Z)
-			end
-		end)
-		local function InpBegan(Inp,GP)
-			if SERVICES.UInp:IsKeyDown(Enum.KeyCode.P)then
-				OpenCheck()
-			end
-		end
-		local function ScanMyNiggers()
-			for i,v in pairs(GuiNChildren["PlayerScrolling"]:GetChildren()) do
-				if not (v:IsA("UIListLayout")) then
-					v:Destroy()
-				end
-			end
-			for i,v in pairs(SERVICES.Player:GetChildren()) do
-				if not v:IsA("Player") then return end
-				local SpecializedButton = PLAYERBTN:Clone()
-				SpecializedButton.Text = v.Name
-				SpecializedButton.LayoutOrder = i
-				SpecializedButton.Activated:Connect(function()
-					local OtherHRP = v.Character:FindFirstChild("HumanoidRootPart")
-					repeat
-						OtherHRP = v.Character:FindFirstChild("HumanoidRootPart")
-						task.wait()
-					until OtherHRP ~= nil
-					CONFIG.BUOY.TARGET = OtherHRP
-				end)
-				SpecializedButton.Parent = GuiNChildren["PlayerScrolling"]
-			end
-		end
-		ScanMyNiggers()
-		SERVICES.Player.ChildAdded:Connect(ScanMyNiggers)
-		SERVICES.Player.ChildRemoved:Connect(ScanMyNiggers)
-		SERVICES.UInp.InputBegan:Connect(InpBegan)
-		SERVICES.Run.Heartbeat:Connect(function()
-			if Dead then return end
-			for i,v in pairs(SERVICES.Work:GetDescendants()) do
-				if v:IsA("Sound") and (v~= CONFIG.SOUNDSTUFF.SOUNDREPLACER) then
-					v.SoundGroup = CONFIG.SOUNDSTUFF.SOUNDMUTER
-				end
-			end
-			if CONFIG.SOUNDSTUFF.MUTED == true then
-				CONFIG.SOUNDSTUFF.SOUNDMUTER.Volume = 0
-			else
-				CONFIG.SOUNDSTUFF.SOUNDMUTER.Volume = 1
-			end
-			--SOUND STUFF END
-			for i,v in pairs(OURGARRAGE.PARTS:GetChildren()) do
-				if v.Name == "Water Buoy" then
-					if v:FindFirstChildWhichIsA("AlignPosition") and v:FindFirstChildWhichIsA("BodyGyro") then
-
-					else
-						local Force = Instance.new("AlignPosition",v)
-						Force.MaxVelocity = math.huge
-						Force.MaxForce = math.huge
-						Force.Mode = Enum.PositionAlignmentMode.OneAttachment
-						local Gyro = Instance.new("BodyGyro",v)
-						Gyro.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
-						local Attachment = Instance.new("Attachment",v)
-						Force.Attachment0 = Attachment
-						Force.ForceLimitMode = Enum.ForceLimitMode.Magnitude
-						table.insert(CONFIG.BUOY.Forces,{v,Force,Gyro,Attachment})
-					end
-				end
-			end
-			for i,v in pairs(CONFIG.BUOY.Forces) do
-				local s,e = pcall(function()
-					if (v[2].Parent.Parent ~= OURGARRAGE.PARTS) or (v[3].Parent.Parent ~= OURGARRAGE.PARTS) or (v[4].Parent.Parent ~= OURGARRAGE.PARTS) then
-						v[2]:Destroy()
-						v[3]:Destroy()
-						v[4]:Destroy()
-						table.remove(CONFIG.BUOY.Forces,i)
-					end
-				end)
-				if e ~= nil then
-					v[2]:Destroy()
-					v[3]:Destroy()
-					v[4]:Destroy()
-				end
-				if CONFIG.BUOY.ACTIVE == true then
-					if CONFIG.BUOY.CLICKENABLE == false then
-						if CONFIG.BUOY.TARGET ~= nil then
-							CONFIG.BUOY.POSITION = CONFIG.BUOY.TARGET.Position
-						end
-					end
-
-					v[2].MaxForce = math.huge
-					v[2].MaxVelocity = math.huge
-					v[3].MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
-					v[2].Position = CONFIG.BUOY.POSITION
-					v[2].RigidityEnabled = CONFIG.BUOY.ENFORCEDRIGIDITY
-					v[2].Responsiveness = CONFIG.BUOY.SPEED
-					v[3].D = CONFIG.BUOY.GRYOSTUFF.SMOOTHNESS
-					v[3].P = CONFIG.BUOY.GRYOSTUFF.SPEED
-					if CONFIG.BUOY.FORMATION == 1 then
-						v[3].CFrame = CFrame.lookAt(v[1].Position,CONFIG.BUOY.POSITION)
-					elseif CONFIG.BUOY.FORMATION ==2 then
-						v[3].CFrame = CFrame.new()*CFrame.fromEulerAngles(math.rad(math.random(1,360)),math.rad(math.random(1,360)),math.rad(math.random(1,360)))
-					end
-				else
-					v[2].RigidityEnabled =false
-					v[2].MaxForce = 0
-					v[2].MaxVelocity = 0
-					v[3].MaxTorque = Vector3.new(0,0,0)
-				end
-			end	
-			--BUOY STUFF END
-		end)
-	end
-	coroutine.wrap(NOLQENI_script)()
-end
-CreateGUI()
---[[game:GetService("RunService").Stepped:Connect(function()
-	if game:GetService("Players").LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):FindFirstChild("MANTA'S PACK.") then
-
 	else
-		if RealDead == true then
-			if game:GetService("Players").LocalPlayer.Character ~= nil then
-				RealDead = true
-				CreateGUI()
+		DB = true
+		_G.Draggable = false
+		local Inf = TweenInfo.new(1,Enum.EasingStyle.Back,Enum.EasingDirection.In,0,false,0)
+		SERVICES.Tween:Create(MAIN,Inf,{Size =UDim2.new(0,0,0,0),Position = UDim2.new(MAIN.Position.X.Scale*2,0,MAIN.Position.Y.Scale*2,0) }):Play()
+		task.wait(1)
+		MAIN.Visible = false
+		DB = false
+	end
+end
+BUTTON.MouseButton1Down:Connect(OpenCheck)
+local QUOTES = {
+	"THREE HERO GROUPS FELL; HERO ASSOCIATION, A.P.O.C, FAILURE MANAGEMENT ASSOCIATION. WHAT ELSE DO YOU THINK CAN STAND IN OUR WAY.",
+	"Back here again, I see.",
+	"Reminder to NOT form any group, as they're known for disbanding.",
+	"Currently the only working and non encrypted script for bnd there is.",
+	"Smoking their pack, arent we?",
+	"Bodies tremble beneath us.",
+	"RGM King would be proud, if he weren't nerfed to the ground in bnd.",
+	"OBSERVER? Who's that moron.",
+	"Reminder, the person who made this is the FIRST person to get banned on BND.",
+	"The end version 3, Albiet reliable, does have one key drawback. Its that it cannot have a massive outer shell.",
+	"FAILURE MANAGEMENT ASSOCIATION? Gotta hand it to you, they turned themselves into eachother.",
+	"HERO ASSOCIATION?, Dead as hell, only 1 active member.",
+	"APOC?, Holy hell how do you even know their name.",
+	"Reminder: only two people hold the weld bomb in its prime, Guess who those innocent fucks are.",
+	"Just to remind you, The end version 3 is a method of humanely euthanizing a server, Imagine the other ways that other games didnt.",
+	"Smoking fish today.",
+	"RGM King, PCB Emperor, Chaos/Entropy Embodiments, 4_04, OBSERVER, Grand Tree, and Gilded knight are proud."
+
+
+}
+local GuiNChildren = {}
+for i,v in pairs(MAIN:GetDescendants()) do
+	if (v.Name == "TITLE") then continue end
+	if (v.Name == "UICorner") then continue end
+	if (v.Name == "UIStroke") then continue end
+	GuiNChildren[v.Name] = v;
+end
+local PAGEBTN = script.PAGEBTN
+local PagesInOrderFFS = {
+	nil,nil,nil,nil,nil
+}
+for i,v in pairs(PAGES:GetChildren()) do
+	if not (v:IsA("Frame")) then continue end
+	local NUM = tonumber(string.sub(v.Name,1,1))
+	PagesInOrderFFS[NUM] = v
+end
+for i,v in pairs(PagesInOrderFFS) do
+	local PGClone = PAGEBTN:Clone()
+	PGClone.Text =string.sub(v.Name,2,string.len(v.Name))
+	PGClone.Activated:Connect(function()
+		for i,t in pairs(PAGES:GetChildren()) do
+			if not (t:IsA("Frame")) then continue end
+			t.Visible =false
+		end
+		v.Visible = true
+	end)
+	PGClone.Parent = GuiNChildren["Page Scrolling"]
+
+end
+MAIN.Dragify.Enabled = true
+GuiNChildren["QUOTEOFTHEDAY"].Text = QUOTES[math.random(1,#QUOTES)]
+GuiNChildren["YOURNAME"].Text = SERVICES.Player.LocalPlayer.Name
+GuiNChildren["YOURSELF."].Image = SERVICES.Player:GetUserThumbnailAsync(SERVICES.Player.LocalPlayer.UserId,Enum.ThumbnailType.AvatarBust,Enum.ThumbnailSize.Size420x420)
+GuiNChildren["IYBtn"].Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+GuiNChildren["ScriptHubBTN"].Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Qrto1/working/main/pc"))()
+end)
+GuiNChildren["AudioInputID"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	CONFIG.SOUNDSTUFF.SOUNDREPLACER.SoundId ="rbxassetid://".. GuiNChildren["AudioInputID"].Text;
+end)
+GuiNChildren["AudioInputVolume"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	CONFIG.SOUNDSTUFF.SOUNDREPLACER.Volume =tonumber(GuiNChildren["AudioInputVolume"].Text);
+end)
+GuiNChildren["AreaSizeINP"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	CONFIG.GOKUSTUFF.AREASIZE =tonumber(GuiNChildren["AreaSizeINP"].Text);
+end)
+GuiNChildren["WaitTimeINP"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	CONFIG.GOKUSTUFF.FRAMETIME =tonumber(GuiNChildren["WaitTimeINP"].Text);
+end)
+GuiNChildren["GarageYeetBTN"].Activated:Connect(function()
+	local Number =  tonumber(GuiNChildren["GarageNoINP"].Text)
+	if Number == 1 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-2595, 2.5, -2677))
+	elseif Number == 2 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-1503, 2.5, -2682))
+	elseif Number == 3 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-404.493, 2.75, -2698))
+	elseif Number == 4 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(202, 2.5, -1831))
+	elseif Number == 5 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(193, 2.5, -352))
+	elseif Number == 6 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-400, 2.5, 500))
+	elseif Number == 7 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-1493, 2.5, 510))
+	elseif Number == 8 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-2604, 2.5, 514))
+	elseif Number == 9 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-3101, 2.5, -335))
+	elseif Number == 10 then
+		SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-3109, 2.75, -1837))
+	else
+		local Text = string.upper(GuiNChildren["GarageNoINP"].Text)
+		if Text == "AMONG" then
+			SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-42214.273, 16.586, 41624.996))
+		elseif Text == "MOON" then
+			SERVICES.Player.LocalPlayer.Character:PivotTo(CFrame.new(-2118, 99860.5, -961))
+		end
+		GuiNChildren["GarageNoINP"].Text = "INVALID NUMBER"
+	end
+end)
+GuiNChildren["AudioSilenceBTN"].Activated:Connect(function()
+	if CONFIG.SOUNDSTUFF.MUTED == false then
+		CONFIG.SOUNDSTUFF.MUTED = true
+		CONFIG.SOUNDSTUFF.SOUNDREPLACER:Play()
+		GuiNChildren["AudioSilenceBTN"].Text = [[<div><font color="#09a9e7">A</font><font color="#1e94d6">U</font><font color="#327ec5">D</font><font color="#4766b0">I</font><font color="#5c4d9a">O</font><font color="#75489a">S</font><font color="#8d439a"> </font><font color="#954aaa">S</font><font color="#9d50ba">I</font><font color="#a557ca">L</font><font color="#763cd7">E</font><font color="#4621e3">N</font><font color="#564acd">C</font><font color="#6673b6">E</font><font color="#5aa0cc">D</font><font color="#4dcde1">.</font></div>]]
+	else
+		CONFIG.SOUNDSTUFF.MUTED = false
+		GuiNChildren["AudioSilenceBTN"].Text =[[<div><font color="#09a9e7">M</font><font color="#139edf">a</font><font color="#1e94d6">k</font><font color="#2889ce">e</font><font color="#327ec5"> </font><font color="#406eb7">a</font><font color="#4e5da8">u</font><font color="#5c4d9a">d</font><font color="#684b9a">i</font><font color="#75489a">o</font><font color="#81469a"> </font><font color="#8d439a">s</font><font color="#9348a6">h</font><font color="#994db2">u</font><font color="#9f52be">t</font><font color="#a557ca"> </font><font color="#8d4ad0">t</font><font color="#763cd7">h</font><font color="#5e2fdd">e</font><font color="#4621e3"> </font><font color="#513cd4">f</font><font color="#5b58c5">u</font><font color="#6673b6">c</font><font color="#608ac1">k</font><font color="#5aa0cc"> </font><font color="#53b7d6">u</font><font color="#4dcde1">p</font></div><div></div>]]
+		CONFIG.SOUNDSTUFF.SOUNDREPLACER:Pause()
+	end
+end)
+GuiNChildren["SpeedTextBox"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	local Num =  tonumber(GuiNChildren["SpeedTextBox"].Text);
+	if Num == nil then
+		Num = 1
+	end
+	if Num < 0 then
+		Num = 0
+	end
+	CONFIG.BUOY.SPEED =Num;
+end)
+
+GuiNChildren["GyroSpeedTextBox"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	local Num =  tonumber(GuiNChildren["GyroSpeedTextBox"].Text);
+	if Num == nil then
+		Num = 1
+	end
+	if Num < 0 then
+		Num = 0
+	end
+	CONFIG.BUOY.GRYOSTUFF.SPEED =Num;
+end)
+GuiNChildren["GyroSpeedTextBox"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	local Num =  tonumber(GuiNChildren["GyroSpeedTextBox"].Text);
+	if Num == nil then
+		Num = 1
+	end
+	if Num < 0 then
+		Num = 0
+	end
+	CONFIG.BUOY.GRYOSTUFF.SPEED =Num;
+end)
+GuiNChildren["GyroSmoothnessTextBox"].Changed:Connect(function(Property)
+	if Property ~= "Text" then return end
+	local Num =  tonumber(GuiNChildren["GyroSmoothnessTextBox"].Text);
+	if Num == nil then
+		Num = 1
+	end
+	if Num < 0 then
+		Num = 0
+	end
+	CONFIG.BUOY.GRYOSTUFF.SMOOTHNESS = Num
+end)
+GuiNChildren["TargetChooseButton"].Activated:Connect(function()
+	if CONFIG.BUOY.CLICKENABLE == false then
+		CONFIG.BUOY.CLICKENABLE = true
+		GuiNChildren["TargetChooseButton"].Text = "Click to Move"
+		GuiNChildren["NonPlayerOverlay"].Visible = true
+		GuiNChildren["PlayerOverlay"].Visible = false
+	else
+		CONFIG.BUOY.CLICKENABLE = false
+		GuiNChildren["NonPlayerOverlay"].Visible = false
+		GuiNChildren["PlayerOverlay"].Visible = true
+		GuiNChildren["TargetChooseButton"].Text = "Player Target"
+	end
+end)
+GuiNChildren["FormationChooseButton"].Activated:Connect(function()
+	if CONFIG.BUOY.FORMATION+1 > 3 then
+		CONFIG.BUOY.FORMATION = 1
+	else
+		CONFIG.BUOY.FORMATION +=1
+	end
+	if CONFIG.BUOY.FORMATION == 1 then
+		GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#09a9e7">F</font><font color="#179bdc">O</font><font color="#248cd0">R</font><font color="#327ec5">M</font><font color="#3d72ba">A</font><font color="#4766b0">T</font><font color="#5259a5">I</font><font color="#5c4d9a">O</font><font color="#6c4a9a">N</font><font color="#7d469a"> </font><font color="#8d439a">/</font><font color="#954aaa">/</font><font color="#9d50ba"> </font><font color="#a557ca">D</font><font color="#8545d2">I</font><font color="#6633db">R</font><font color="#4621e3">E</font><font color="#4e36d8">C</font><font color="#564acd">T</font><font color="#5e5fc1"> </font><font color="#6673b6">P</font><font color="#5e91c4">A</font><font color="#55afd3">T</font><font color="#4dcde1">H</font></div>]]
+	elseif CONFIG.BUOY.FORMATION == 2 then
+		GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#09a9e7">F</font><font color="#1e94d6">O</font><font color="#327ec5">R</font><font color="#406eb7">M</font><font color="#4e5da8">A</font><font color="#5c4d9a">T</font><font color="#75489a">I</font><font color="#8d439a">O</font><font color="#954aaa">N</font><font color="#9d50ba"> </font><font color="#a557ca">/</font><font color="#763cd7">/</font><font color="#4621e3"> </font><font color="#513cd4">S</font><font color="#5b58c5">P</font><font color="#6673b6">E</font><font color="#5aa0cc">E</font><font color="#4dcde1">N</font></div>]]
+	elseif CONFIG.BUOY.Forces == 3 then
+		GuiNChildren["FormationChooseButton"].Text = [[]]
+	end
+end)
+GuiNChildren["GOKUSFX"].Activated:Connect(function()
+	if CONFIG.GOKUSTUFF.GOKUNOISES == false then
+		CONFIG.GOKUSTUFF.GOKUNOISES = true
+		GuiNChildren["GOKUSFX"].Text = [[<div><font color="#09a9e7">S</font><font color="#1e94d6">F</font><font color="#327ec5">X</font><font color="#5c4d9a"> </font><font color="#75489a">E</font><font color="#8d439a">N</font><font color="#a557ca">A</font><font color="#763cd7">B</font><font color="#4621e3">L</font><font color="#6673b6">E</font><font color="#5aa0cc">D</font><font color="#4dcde1">.</font></div>]]
+	else
+		CONFIG.GOKUSTUFF.GOKUNOISES = false
+		GuiNChildren["GOKUSFX"].Text = [[<div><font color="#09a9e7">S</font><font color="#1e94d6">F</font><font color="#327ec5">X</font><font color="#5c4d9a"> </font><font color="#75489a">D</font><font color="#8d439a">I</font><font color="#a557ca">S</font><font color="#763cd7">A</font><font color="#4621e3">B</font><font color="#6673b6">L</font><font color="#5aa0cc">E</font><font color="#4dcde1">D</font></div>]]
+	end
+end)
+GuiNChildren["WaterBuoyInitiator"].Activated:Connect(function()
+	if CONFIG.BUOY.ACTIVE == true then
+		CONFIG.BUOY.ACTIVE  = false
+		GuiNChildren["WaterBuoyInitiator"].Text = [[<div><font color="#bf74fd">B</font><font color="#a680fb">U</font><font color="#8c8cf9">O</font><font color="#8bc3f9">Y</font><font color="#89f9f9"> </font><font color="#84f8bc">I</font><font color="#7ef67e">N</font><font color="#baf679">I</font><font color="#f6f674">T</font><font color="#f4d77a">I</font><font color="#f2b87f">A</font><font color="#f79d81">T</font><font color="#fb8282">E</font></div>]]
+	else
+		CONFIG.BUOY.ACTIVE  = true
+		GuiNChildren["WaterBuoyInitiator"].Text = [[<div><font color="#bf74fd">B</font><font color="#b27afc">U</font><font color="#a680fb">O</font><font color="#9986fa">Y</font><font color="#8c8cf9"> </font><font color="#8bb0f9">F</font><font color="#8ad5f9">L</font><font color="#89f9f9">I</font><font color="#86f8da">N</font><font color="#84f8bc">G</font><font color="#81f79d">I</font><font color="#7ef67e">N</font><font color="#9cf67c">G</font><font color="#baf679"> </font><font color="#d8f677">I</font><font color="#f6f674">N</font><font color="#f5e178">I</font><font color="#f3cd7b">T</font><font color="#f2b87f">I</font><font color="#f4ab80">A</font><font color="#f79d81">T</font><font color="#f99081">E</font><font color="#fb8282">D</font></div>]]
+	end
+end)
+
+GuiNChildren["AOE ProtectionBTN"].Activated:Connect(function()
+	if CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT == false then
+		CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT = true
+		GuiNChildren["AOE ProtectionBTN"].Text =[[<div><font color="#09a9e7">U</font><font color="#179bdc">L</font><font color="#248cd0">T</font><font color="#327ec5">R</font><font color="#3d72ba">A</font><font color="#4766b0"> </font><font color="#5259a5">I</font><font color="#5c4d9a">N</font><font color="#6c4a9a">S</font><font color="#7d469a">T</font><font color="#8d439a">I</font><font color="#9348a6">N</font><font color="#994db2">C</font><font color="#9f52be">T</font><font color="#a557ca"> </font><font color="#8545d2">:</font><font color="#6633db"> </font><font color="#4621e3">E</font><font color="#4e36d8">N</font><font color="#564acd">A</font><font color="#5e5fc1">B</font><font color="#6673b6">L</font><font color="#5e91c4">E</font><font color="#55afd3">D</font><font color="#4dcde1">.</font></div>]]
+	else
+		CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT = false
+		GuiNChildren["AOE ProtectionBTN"].Text = [[<div><font color="#09a9e7">U</font><font color="#179bdc">L</font><font color="#248cd0">T</font><font color="#327ec5">R</font><font color="#3d72ba">A</font><font color="#4766b0"> </font><font color="#5259a5">I</font><font color="#5c4d9a">N</font><font color="#6c4a9a">S</font><font color="#7d469a">T</font><font color="#8d439a">I</font><font color="#9348a6">N</font><font color="#994db2">C</font><font color="#9f52be">T</font><font color="#a557ca">:</font><font color="#8545d2"> </font><font color="#6633db">D</font><font color="#4621e3">I</font><font color="#4e36d8">S</font><font color="#564acd">A</font><font color="#5e5fc1">B</font><font color="#6673b6">L</font><font color="#5e91c4">E</font><font color="#55afd3">D</font><font color="#4dcde1">.</font></div>]]
+	end
+end)
+GuiNChildren["ENFORCED FLINGING"].Activated:Connect(function()
+	if CONFIG.BUOY.ENFORCEDRIGIDITY == false then
+		CONFIG.BUOY.ENFORCEDRIGIDITY = true
+		GuiNChildren["ENFORCED FLINGING"].Text =[[<div><font color="#c91919">E</font><font color="#cc2a15">N</font><font color="#cf3c12">F</font><font color="#d24d0e">O</font><font color="#d45e0b">R</font><font color="#d76f07">C</font><font color="#da8104">E</font><font color="#dd9200">D</font><font color="#da8104"> </font><font color="#d76f07">B</font><font color="#d45e0b">U</font><font color="#d24d0e">O</font><font color="#cf3c12">Y</font><font color="#cc2a15">S</font><font color="#c91919">.</font></div>]]
+	else
+		CONFIG.BUOY.ENFORCEDRIGIDITY = false
+		GuiNChildren["ENFORCED FLINGING"].Text = [[<div><font color="#bf74fd">U</font><font color="#ae7cfc">n</font><font color="#9d84fa">e</font><font color="#8c8cf9">n</font><font color="#8bc3f9">f</font><font color="#89f9f9">o</font><font color="#85f8d0">r</font><font color="#82f7a7">c</font><font color="#7ef67e">e</font><font color="#baf679">d</font><font color="#f6f674"> </font><font color="#f5e178">B</font><font color="#f3cd7b">u</font><font color="#f2b87f">o</font><font color="#f79d81">y</font><font color="#fb8282">s</font></div>]]
+	end
+end)
+--[[task.spawn(function()
+	while task.wait()do
+		for i,v in pairs(OURGARRAGE.PARTS:GetChildren()) do
+			if v.Name == "Water Buoy" then
+				if v:FindFirstChildWhichIsA("AlignPosition") and v:FindFirstChildWhichIsA("BodyGyro") then
+
+				else
+					local Force = Instance.new("AlignPosition",v)
+					Force.MaxVelocity = math.huge
+					Force.MaxForce = math.huge
+					Force.Mode = Enum.PositionAlignmentMode.OneAttachment
+					local Gyro = Instance.new("BodyGyro",v)
+					Gyro.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+					local Attachment = Instance.new("Attachment",v)
+					Force.Attachment0 = Attachment
+					Force.ForceLimitMode = Enum.ForceLimitMode.Magnitude
+					table.insert(CONFIG.BUOY.Forces,{v,Force,Gyro,Attachment})
+
+					local HL = Instance.new("Highlight",v)
+					HL.Adornee = v
+					HL.OutlineTransparency = 0
+					HL.FillTransparency = .5
+				end
+			end
+		end
+		for i,v in pairs(CONFIG.BUOY.Forces) do
+			if v[2].Parent.Parent ~= OURGARRAGE.PARTS then
+				v[2]:Destroy()
+				v[3]:Destroy()
+				table.remove(CONFIG.BUOY.Forces,i)
+			end
+			if CONFIG.BUOY.ACTIVE == true then
+				if CONFIG.BUOY.CLICKENABLE == false then
+					if CONFIG.BUOY.TARGET ~= nil then
+						CONFIG.BUOY.POSITION = CONFIG.BUOY.TARGET.Position
+					end
+				end
+
+				v[2].MaxForce = math.huge
+				v[2].MaxVelocity = math.huge
+				v[3].MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+				v[2].Position = CONFIG.BUOY.POSITION
+				v[2].RigidityEnabled = CONFIG.BUOY.ENFORCEDRIGIDITY
+				v[2].Responsiveness = CONFIG.BUOY.SPEED
+				v[3].D = CONFIG.BUOY.GRYOSTUFF.SMOOTHNESS
+				v[3].P = CONFIG.BUOY.GRYOSTUFF.SPEED
+				if CONFIG.BUOY.FORMATION == 1 then
+					v[3].CFrame = CFrame.lookAt(v[1].Position,CONFIG.BUOY.POSITION)
+				elseif CONFIG.BUOY.FORMATION ==2 then
+					v[3].CFrame = CFrame.new()*CFrame.fromEulerAngles(math.rad(math.random(1,360)),math.rad(math.random(1,360)),math.rad(math.random(1,360)))
+				end
+			else
+				v[2].RigidityEnabled =false
+				v[2].MaxForce = 0
+				v[2].MaxVelocity = 0
+				v[3].MaxTorque = Vector3.new(0,0,0)
 			end
 		end
 	end
+
 end)]]
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			while CONFIG.GOKUSTUFF.MASTEREDULTRAINSTINCT == true do
+				local CHAR = SERVICES.Player.LocalPlayer.Character
+				local HRP = CHAR:FindFirstChild("HumanoidRootPart")
+				if HRP == nil then
+					warn("YOU ARE DEAD.") --KILL YOURSELF
+				end
+				local GOKUPART = Instance.new('Part')
+				GOKUPART.Position = HRP.Position
+				GOKUPART.Size = Vector3.new(CONFIG.GOKUSTUFF.AREASIZE,CONFIG.GOKUSTUFF.AREASIZE,CONFIG.GOKUSTUFF.AREASIZE)
+				local OLDHRPPOS = HRP.CFrame
+				for i,v in pairs(SERVICES.Work:GetPartsInPart(GOKUPART)) do
+					if (string.find(v.Name, "Bumper") or string.find(v.Name, "Spike")) and (not (v:IsDescendantOf(OURGARRAGE.PARTS))) then
+						task.spawn(function()
+							CHAR:PivotTo(OLDHRPPOS + (CONFIG.GOKUSTUFF.AREASIZE*(OLDHRPPOS.Position - v.Position).Unit))
+							--local Force = Instance.new("BodyForce",HRP)
+							--Force.Force = 25000*(HRP.Position - v.Position).Unit
+						end)
+						if CONFIG.GOKUSTUFF.GOKUNOISES == true then
+							local Sound = Instance.new("Sound",SERVICES.Sound)
+							Sound.SoundId = "rbxassetid://6820466812"
+							Sound.Playing = true
+							SERVICES.Deb:AddItem(Sound,2)
+						end
+					else
+						GOKUPART.Anchored = true
+						GOKUPART.CanCollide = false
+						GOKUPART.Transparency = .5
+						GOKUPART.Parent = workspace
+						SERVICES.Deb:AddItem(GOKUPART,.1)
+
+					end
+				end
+				task.wait(CONFIG.GOKUSTUFF.FRAMETIME)
+			end
+		end)
+	end	
+end)
+local Mouse = SERVICES.Player.LocalPlayer:GetMouse()
+Mouse.Button1Down:Connect(function()
+	if CONFIG.BUOY.CLICKENABLE == true then
+		local Temp = Mouse.Hit
+		CONFIG.BUOY.POSITION =  Vector3.new(Temp.X,Temp.Y,Temp.Z)
+	end
+end)
+function InpBegan(Inp,GP)
+	if SERVICES.UInp:IsKeyDown(Enum.KeyCode.P)then
+		OpenCheck()
+	end
+end
+function ScanMyNiggers()
+	for i,v in pairs(GuiNChildren["PlayerScrolling"]:GetChildren()) do
+		if not (v:IsA("UIListLayout")) then
+			v:Destroy()
+		end
+	end
+	for i,v in pairs(SERVICES.Player:GetChildren()) do
+		if not v:IsA("Player") then return end
+		local SpecializedButton = script.PLAYERBTN:Clone()
+		SpecializedButton.Text = v.Name
+		SpecializedButton.LayoutOrder = i
+		SpecializedButton.Activated:Connect(function()
+			local OtherHRP = v.Character:FindFirstChild("HumanoidRootPart")
+			repeat
+				OtherHRP = v.Character:FindFirstChild("HumanoidRootPart")
+				task.wait()
+			until OtherHRP ~= nil
+			CONFIG.BUOY.TARGET = OtherHRP
+		end)
+		SpecializedButton.Parent = GuiNChildren["PlayerScrolling"]
+	end
+end
+ScanMyNiggers()
+SERVICES.Player.ChildAdded:Connect(ScanMyNiggers)
+SERVICES.Player.ChildRemoved:Connect(ScanMyNiggers)
+SERVICES.UInp.InputBegan:Connect(InpBegan)
+SERVICES.Run.Heartbeat:Connect(function()
+
+	for i,v in pairs(SERVICES.Work:GetDescendants()) do
+		if v:IsA("Sound") and (v~= CONFIG.SOUNDSTUFF.SOUNDREPLACER) then
+			v.SoundGroup = CONFIG.SOUNDSTUFF.SOUNDMUTER
+		end
+	end
+	if CONFIG.SOUNDSTUFF.MUTED == true then
+		CONFIG.SOUNDSTUFF.SOUNDMUTER.Volume = 0
+	else
+		CONFIG.SOUNDSTUFF.SOUNDMUTER.Volume = 1
+	end
+	--SOUND STUFF END
+	for i,v in pairs(OURGARRAGE.PARTS:GetChildren()) do
+		if v.Name == "Water Buoy" then
+			if v:FindFirstChildWhichIsA("AlignPosition") and v:FindFirstChildWhichIsA("BodyGyro") then
+
+			else
+				local Force = Instance.new("AlignPosition",v)
+				Force.MaxVelocity = math.huge
+				Force.MaxForce = math.huge
+				Force.Mode = Enum.PositionAlignmentMode.OneAttachment
+				local Gyro = Instance.new("BodyGyro",v)
+				Gyro.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+				local Attachment = Instance.new("Attachment",v)
+				Force.Attachment0 = Attachment
+				Force.ForceLimitMode = Enum.ForceLimitMode.Magnitude
+				table.insert(CONFIG.BUOY.Forces,{v,Force,Gyro,Attachment})
+
+				local HL = Instance.new("Highlight",v)
+				HL.Adornee = v
+				HL.OutlineTransparency = 0
+				HL.FillTransparency = .5
+			end
+		end
+	end
+	for i,v in pairs(CONFIG.BUOY.Forces) do
+		local s,e = pcall(function()
+			if (v[2].Parent.Parent ~= OURGARRAGE.PARTS) or (v[3].Parent.Parent ~= OURGARRAGE.PARTS) or (v[4].Parent.Parent ~= OURGARRAGE.PARTS) then
+				v[2]:Destroy()
+				v[3]:Destroy()
+				v[4]:Destroy()
+				table.remove(CONFIG.BUOY.Forces,i)
+			end
+		end)
+		if e ~= nil then
+			v[2]:Destroy()
+			v[3]:Destroy()
+			v[4]:Destroy()
+		end
+		if CONFIG.BUOY.ACTIVE == true then
+			if CONFIG.BUOY.CLICKENABLE == false then
+				if CONFIG.BUOY.TARGET ~= nil then
+					CONFIG.BUOY.POSITION = CONFIG.BUOY.TARGET.Position
+				end
+			end
+
+			v[2].MaxForce = math.huge
+			v[2].MaxVelocity = math.huge
+			v[3].MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+			v[2].Position = CONFIG.BUOY.POSITION
+			v[2].RigidityEnabled = CONFIG.BUOY.ENFORCEDRIGIDITY
+			v[2].Responsiveness = CONFIG.BUOY.SPEED
+			v[3].D = CONFIG.BUOY.GRYOSTUFF.SMOOTHNESS
+			v[3].P = CONFIG.BUOY.GRYOSTUFF.SPEED
+			if CONFIG.BUOY.FORMATION == 1 then
+				v[3].CFrame = CFrame.lookAt(v[1].Position,CONFIG.BUOY.POSITION)
+			elseif CONFIG.BUOY.FORMATION ==2 then
+				v[3].CFrame = CFrame.new()*CFrame.fromEulerAngles(math.rad(math.random(1,360)),math.rad(math.random(1,360)),math.rad(math.random(1,360)))
+			elseif CONFIG.BUOY.FORMATION == 3 then
+				local Funny = Vector3.new(math.random(-(_G.MalevolentShrineRadius),(_G.MalevolentShrineRadius)),math.random(-(_G.MalevolentShrineRadius),(_G.MalevolentShrineRadius)),math.random(-(_G.MalevolentShrineRadius),(_G.MalevolentShrineRadius)))
+				v[2].Position = Funny
+				v[3].CFrame = CFrame.new()*CFrame.fromEulerAngles(math.rad(math.random(1,360)),math.rad(math.random(1,360)),math.rad(math.random(1,360)))
+			end
+		else
+			v[2].RigidityEnabled =false
+			v[2].MaxForce = 0
+			v[2].MaxVelocity = 0
+			v[3].MaxTorque = Vector3.new(0,0,0)
+		end
+	end	
+	--BUOY STUFF END
+	end)
+end
