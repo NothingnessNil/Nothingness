@@ -1,8 +1,3 @@
--- Monstrum's Gui to Lua\n-- Version: 3.2
-
---_G.MalevolentShrineRadius = 45
---_G.ActuallyFireTheGui = true
--- Instances:
 local Dead = false
 game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Died:Connect(function()
 	Dead = true
@@ -1373,6 +1368,8 @@ if _G.ActuallyFireTheGui == true then
 				GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#57aaca">I</font><font color="#57bbb5">R</font><font color="#56cba0">O</font><font color="#68b9ba">N</font><font color="#7aa6d4"> </font><font color="#8c94ee">D</font><font color="#b88ef1">O</font><font color="#e488f4">M</font><font color="#f2b9a2">E</font><font color="#ffea50">.</font></div>]]
 			elseif CONFIG.BUOY.FORMATION == 5 then
 				GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#57aaca">H</font><font color="#57aec5">E</font><font color="#57b2c0">Y</font><font color="#57b6ba"> </font><font color="#57bbb5">G</font><font color="#56bfb0">U</font><font color="#56c3ab">Y</font><font color="#56c7a5">S</font><font color="#56cba0">,</font><font color="#5ec3ab"> </font><font color="#65bbb6">O</font><font color="#6db3c1">M</font><font color="#75accd">I</font><font color="#7da4d8">N</font><font color="#849ce3">O</font><font color="#8c94ee">U</font><font color="#9793ef">S</font><font color="#a291f0"> </font><font color="#ad90f0">O</font><font color="#b88ef1">R</font><font color="#c38df2">B</font><font color="#ce8bf3">I</font><font color="#d98af3">T</font><font color="#e488f4">I</font><font color="#e896dd">N</font><font color="#eca4c5">G</font><font color="#f0b2ae"> </font><font color="#f3c096">H</font><font color="#f7ce7f">E</font><font color="#fbdc67">R</font><font color="#ffea50">E</font></div>]]
+			elseif CONFIG.BUOY.FORMATION ==6 then
+				GuiNChildren["FormationChooseButton"].Text = [[<div><font color="#ff0000">_</font><font color="#f30714">-</font><font color="#e80d28">B</font><font color="#dc143c">U</font><font color="#c10d28">G</font><font color="#a60714">G</font><font color="#8b0000">Y</font><font color="#8b0000">-</font><font color="#8b0000">_</font><font color="#8b0000"> </font><font color="#8b0000">O</font><font color="#a60714">R</font><font color="#c10d28">B</font><font color="#dc143c">I</font><font color="#e80d28">T</font><font color="#f30714">A</font><font color="#ff0000">L</font></div>]]
 			end
 		end)
 		GuiNChildren["GOKUSFX"].Activated:Connect(function()
@@ -1636,15 +1633,23 @@ if _G.ActuallyFireTheGui == true then
 							Time = 0
 						end
 						local Cframeoid = CFrame.new(CONFIG.BUOY.POSITION)*CFrame.fromEulerAnglesXYZ((i*11.25),Time*(_G.DomeOrbitSpeed),0)*CFrame.new(0,0,_G.DomeOrbitDistance)
-						v[2].Position += Cframeoid.Position
+						v[2].Position = Cframeoid.Position
 						v[3].CFrame = Cframeoid
 					elseif CONFIG.BUOY.FORMATION == 5 then
 						Time +=1
 						if (Time>= 100000) then
 							Time = 0
 						end
+						local Cframeoid = CFrame.new(CONFIG.BUOY.POSITION)*CFrame.fromEulerAnglesXYZ(_G.Angle,Time*(_G.DomeOrbitSpeed)*(i),0)*CFrame.new(0,0,_G.DomeOrbitDistance)
+						v[2].Position = Cframeoid.Position
+						v[3].CFrame = Cframeoid
+					elseif CONFIG.BUOY.FORMATION == 6 then
+						Time +=1
+						if (Time>= 100000) then
+							Time = 0
+						end
 						local Cframeoid = CFrame.new(CONFIG.BUOY.POSITION)*CFrame.fromEulerAnglesXYZ(_G.Angle,Time*(_G.DomeOrbitSpeed)*(i/_G.DomeOrbitSpeed),0)*CFrame.new(0,0,_G.DomeOrbitDistance)
-						v[2].Position += Cframeoid.Position
+						v[2].Position = Cframeoid.Position
 						v[3].CFrame = Cframeoid
 					end
 				else
