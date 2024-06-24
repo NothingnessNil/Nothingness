@@ -1184,9 +1184,10 @@ if _G.ActuallyFireTheGui == true then
 			"Reminder: only two people hold the weld bomb in its prime, Guess who those innocent fucks are.",
 			"Just to remind you, The end version 3 is a method of humanely euthanizing a server, Imagine the other ways that other games didnt.",
 			"Smoking fish today.",
-			"RGM King, PCB Emperor, Chaos/Entropy Embodiments, 4_04, OBSERVER, Grand Tree, and Gilded knight are proud."
-
-
+			"RGM King, PCB Emperor, Chaos/Entropy Embodiments, 4_04, OBSERVER, Grand Tree, and Gilded knight are proud.",
+			"Cert thinks he's him, however, relies solely on chatgpt.",
+			"Gilad1 got smoked again in exactly 9:19 AM 6/24/2024 EST.",
+			"Skidding since 2017",
 		}
 		local GuiNChildren = {}
 		for i,v in pairs(MAIN:GetDescendants()) do
@@ -1652,6 +1653,7 @@ if _G.ActuallyFireTheGui == true then
 						v[2].Position = Cframeoid.Position
 						v[3].CFrame = Cframeoid
 					end
+					v[2].Position += _G.Offset
 				else
 					v[2].RigidityEnabled =false
 					v[2].MaxForce = 0
